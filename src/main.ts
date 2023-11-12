@@ -1,24 +1,50 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+
+
+
+
+
+const forest = document.querySelector ('#forest') as HTMLPictureElement
+// forest.style.width = 500+'px'
+
+
+window.onload = ()=> {
+ console.log('страница загружена');
+}
+document.addEventListener('DOMContentLoaded', ready)
+function ready(event){
+  console.log(`ширина ${forest.style.width} px`);
+  console.log('DOMContentLoaded');
+}
+
+window.onunload = ()=> {
+ console.log('вы покидаете страницу');
+}
+
+const button = document.querySelector('#button') as HTMLButtonElement
+// button.addEventListener
+button.innerHTML = document.readyState;
+
+// диалоговое окно - внесенные изменения могут не сохраниться
+ 
+// window.onbeforeunload = function() {
+//   return false;
+// };
+
+
+if (document.readyState == 'interactive') {
+  // ещё загружается, ждём события
+  document.addEventListener('DOMContentLoaded', ()=> {
+    console.log('ждём события');
+  });
+} else {
+    console.log('DOM готов!');
+}
+
+
+// loading - в процессе загрузки
+// interactive - полностью прочитан
+// complete - полностью прочитан и все ресурсы загружены
+ 
