@@ -1,14 +1,29 @@
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0px;
+  padding: 0px;
   background-color: lightgrey;
   display: flex;
   flex-direction: column;
-  margin: 50px;
-  gap: 50px;
+  /* margin: 50px; */
+  /* gap: 50px; */
+  scroll-behavior:auto;
 }
 
 
+#first_page, #second_page {
+  gap: 20px;
+  padding: 50px;
+}
 
+#users {
+  background-color: greenyellow;
+  width: 200px;
+}
 
 #button {
   background: lightcyan;
