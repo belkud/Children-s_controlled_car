@@ -70,12 +70,26 @@ button.innerHTML = document.readyState;
   // console.log(Vasia);
 
  
+  let summ = 1
  
   const users = document.querySelector('#users') as HTMLButtonElement
-  users.innerHTML = (Vasia.name + '<br>')
-  users.innerHTML += Vasia.age
-
+  // users.innerHTML = (Vasia.name + '<br>')
+  // users.innerHTML += Vasia.age
   
+  users.addEventListener('click', ()=> {
+    setInterval(()=>{
+      summ++
+      users.innerHTML = `Счетчик времени: ${summ}`
+    },1)
+  })
+
+
+  // const nums = document.querySelector('#num') as HTMLButtonElement
+ 
+
+
+
+
   //! Метод document.write – один из наиболее древних  и ненужных методов (работает пока страничка грузится)
 
 
@@ -141,3 +155,73 @@ console.log(telephone);
 
 
 
+
+
+
+
+
+
+
+function Person (name:string, age:number, city:string) {
+  this.name = name
+  this.age = age
+  this.city = city
+  this.country = 'Russia'
+  this.job = 'programmist'
+}
+
+let user1 = new Person('Sveta', 27, 'Sochi')
+console.log(user1);
+
+
+
+
+
+
+const data_output = document.querySelector('#data_output ') as HTMLDivElement
+
+
+
+
+//! promise
+const prom1 = new Promise((resolve,reject)=>{
+    resolve ('Проверка пройдена')
+})
+
+prom1.then((value)=>{
+    console.log(value)
+})
+
+const prom2 = new Promise((resolve,reject)=> {
+  reject ('Проверка не пройдена')
+})
+
+prom2.catch((value)=>{
+  console.log(value)
+})
+
+data_output.addEventListener ('click', ()=>{
+    if (data_output.style.backgroundColor == 'red'){
+      data_output.style.backgroundColor = 'green'
+      prom1.then((value)=>{
+       data_output.innerHTML = (value)
+     })
+    } else {
+      data_output.style.backgroundColor = 'red'
+      prom2.catch((value)=>{
+       data_output.innerHTML = (value)
+     })
+    }
+})
+
+
+// digital.addEventListener ('click', (e)=>{
+//   if (e.target.style.backgroundColor == 'lightgray')  {
+//      e.target.style.backgroundColor = 'red'
+//      e.target.style.color = 'lightgrey'
+     
+//   } else{
+//      e.target.style.backgroundColor = 'lightgray'
+//      e.target.style.color = 'red'
+//   }
+// }));

@@ -20,9 +20,28 @@ body {
   padding: 50px;
 }
 
+#data_output {
+  background-color: rgb(251, 170, 20);
+  width: 200px;
+  height: 100px;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+
+
+
+
+
 #users {
   background-color: greenyellow;
   width: 200px;
+  height: 100px;
+  font-size: 1.2em;
+  padding: 10px;
 }
 
 #button {
