@@ -2,6 +2,27 @@ import './style.css'
 
 
 
+// .item  
+
+// .list-item 
+
+// .list-item>button 
+const changeColor = document.querySelector('.changeColor')
+const list_item = document.querySelectorAll('.list-item>button') 
+list_item.forEach(list_item=>
+  list_item.addEventListener ('click', (event)=> {
+    list_item.classList.toggle('changeColor')
+    console.log( button.dataset);
+    
+}))
+
+// list_item.forEach(list_item=>
+//   list_item.addEventListener ('click', (event)=> {
+//     list_item.classList.toggle('changeColor')
+//     console.log( 'juy');
+    
+// }))
+
 
 
 
@@ -9,7 +30,7 @@ import './style.css'
 const forest = document.querySelector ('#forest') as HTMLPictureElement
 // forest.style.width = 500+'px'
 
-//! 3 стадии загрузки HTML страницы
+//! 3 этапа загрузки HTML страницы
 // 1
 // document.addEventListener('DOMContentLoaded', ready)
 // function ready(){
@@ -29,7 +50,7 @@ const forest = document.querySelector ('#forest') as HTMLPictureElement
 
 
 const button = document.querySelector('#button') as HTMLButtonElement
-button.innerHTML = document.readyState;
+// button.innerHTML = document.readyState;
 
 // readyState - степень загрузки элемента
 
