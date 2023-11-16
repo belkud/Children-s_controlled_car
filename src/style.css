@@ -29,9 +29,9 @@ body {
   height: 100px;
   color: aliceblue;
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* font-size: 1.2em; */
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
 }
 
 
