@@ -9,19 +9,20 @@ import './style.css'
 // .list-item>button 
 const changeColor = document.querySelector('.changeColor')
 const list_item = document.querySelectorAll('.list-item>button') 
-list_item.forEach(list_item=>
-  list_item.addEventListener ('click', (event)=> {
-    list_item.classList.toggle('changeColor')
-    console.log( button.dataset);
+
+  for (let i=0; i<list_item.length; i++)(
+  list_item[i].addEventListener ('click', ()=> {
+    // list_item.classList.toggle('changeColor')
+    console.log(`${i+1}`);
     
 }))
 
-// list_item.forEach(list_item=>
-//   list_item.addEventListener ('click', (event)=> {
-//     list_item.classList.toggle('changeColor')
-//     console.log( 'juy');
+list_item.forEach(list_item=>
+  list_item.addEventListener ('click', (event)=> {
+    list_item.classList.toggle('changeColor')
+    console.log(event.target.dataset.set);
     
-// }))
+}))
 
 
 
