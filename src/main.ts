@@ -2,12 +2,65 @@ import './style.css'
 
 
 
-// .item  
+// const users = document.querySelector('#users') as HTMLButtonElement
 
-// .list-item 
+  
+//   users.addEventListener('click', ()=> {
+//     setInterval(()=>{
+//       summ++
+//       users.innerHTML = `Счетчик времени: ${summ}`
+//     },1)
+//   })
 
-// .list-item>button 
 const changeColor = document.querySelector('.changeColor')
+
+
+
+
+let moveX =  0 
+let moveY =  0 
+document.addEventListener ('keydown', (event)=> {
+  console.log(event.key);
+  
+  if (event.key == 'ArrowRight') {
+    moveX = moveX + 10
+  data_output.style.marginLeft = moveX + 'px'
+  rotate()
+} if (event.key == 'ArrowLeft'){
+  moveX = moveX - 10
+  data_output.style.marginLeft = moveX + 'px'
+  rotateReverce ()
+} if (event.key == 'ArrowUp') {
+  moveY = moveY - 10
+  data_output.style.marginTop = moveY + 'px'
+} if (event.key == 'ArrowDown') {
+  moveY = moveY + 10
+  data_output.style.marginTop = moveY + 'px'
+}
+})
+
+let deg = 0
+
+function rotate () {
+  if (deg==90) {
+    return 
+  }
+  deg+=90
+  data_output.style.rotate = deg + 'deg'
+  data_output.style.transition = .5 + 's'
+}
+function rotateReverce () {
+  if (deg==0) {
+    return 
+  }
+  deg-=90
+  data_output.style.rotate = deg + 'deg'
+  data_output.style.transition = .5 + 's'
+}
+
+
+
+
 const list_item = document.querySelectorAll('.list-item>button') 
 
   for (let i=0; i<list_item.length; i++)(

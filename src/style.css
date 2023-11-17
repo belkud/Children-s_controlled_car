@@ -12,6 +12,7 @@ body {
   /* margin: 50px; */
   /* gap: 50px; */
   scroll-behavior:auto;
+  height: 100vh;
 }
 
 
@@ -52,6 +53,10 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.2em;
+  margin-left:  0px;
+  margin-top: 0px;
+  position: absolute;
+  border:  2px solid rebeccapurple;
 }
 
 
