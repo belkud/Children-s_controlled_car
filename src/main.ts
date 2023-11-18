@@ -67,7 +67,10 @@ svgfile.addEventListener ('click', ()=> {
   car.classList.remove('car2')
   car.classList.remove('car3')
   car.classList.remove('car4')
-  rotateRight()
+  deg=90
+  car.style.rotate = deg + 'deg'
+  carWithLamp.style.rotate = deg + 'deg'
+  carWithLamp2.style.rotate = deg + 'deg'
 
 })
 
