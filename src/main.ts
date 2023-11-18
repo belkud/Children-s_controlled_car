@@ -31,13 +31,24 @@ switchLamps.addEventListener('click', ()=>{
 
 
 switchLamps2.addEventListener('click', ()=> {
-  setInterval(() => {
-    carWithLamp2.style.opacity = '1'
-  }, 500);
-  setInterval(() => {
-    carWithLamp2.style.opacity = '0'
-  }, 1000);
+  carWithLamp2.style.display = 'block'
+  if(switchLamps2.innerHTML == 'Включить аварийку') {
+    switchLamps2.innerHTML = 'Выключить аварийку'
   
+    setInterval (() => {
+      setTimeout(() => {
+        carWithLamp2.style.opacity = '0'
+      }, 0);
+      setTimeout(() => {
+        carWithLamp2.style.opacity = '1'
+      }, 500);
+    },1000);
+    
+  } else {
+    switchLamps2.innerHTML = 'Включить аварийку'
+    carWithLamp2.style.display = 'none'
+  }
+
 })
 
 
