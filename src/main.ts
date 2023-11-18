@@ -55,7 +55,21 @@ switchLamps2.addEventListener('click', ()=> {
 
 
 
+const svgfile = document.querySelector ('#svgfile')   as HTMLOrSVGImageElement
+svgfile.addEventListener ('click', ()=> {
+  
+  moveX = moveX + 20
+  car.style.marginLeft = moveX + 'px'
+  carWithLamp.style.marginLeft = moveX + 'px'
+  carWithLamp2.style.marginLeft = moveX + 'px'
+  car.classList.add('car1')
+  car.classList.add('car1')
+  car.classList.remove('car2')
+  car.classList.remove('car3')
+  car.classList.remove('car4')
+  rotateRight()
 
+})
 
  
  
@@ -63,10 +77,12 @@ switchLamps2.addEventListener('click', ()=> {
  let moveY = 0
 
 
-document.addEventListener ('keydown', (event)=> {
-  console.log(event.key);
+document.addEventListener ('keydown' || 'click', (event)=> {
+  console.log(event.code);
   
-  if (event.key == 'ArrowRight') {
+  if (event.key == 'ArrowRight' || event.code == 'KeyD' ) {
+    
+    
     moveX = moveX + 15
     car.style.marginLeft = moveX + 'px'
     carWithLamp.style.marginLeft = moveX + 'px'
@@ -77,6 +93,8 @@ document.addEventListener ('keydown', (event)=> {
     car.classList.remove('car3')
     car.classList.remove('car4')
     rotateRight()
+
+
     
   } if (event.key == 'ArrowLeft'){
     moveX = moveX - 10
