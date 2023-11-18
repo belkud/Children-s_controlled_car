@@ -56,7 +56,8 @@ switchLamps2.addEventListener('click', ()=> {
 
 let deg = 0
 const svgfile = document.querySelector ('#svgfile')   as HTMLOrSVGImageElement
-svgfile.addEventListener ('mouseup', ()=> {
+svgfile.addEventListener ('mousemove', ()=> {
+  console.log(56);
   
   moveX = moveX + 20
   car.style.marginLeft = moveX + 'px'
