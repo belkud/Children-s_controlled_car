@@ -24,11 +24,31 @@ body {
 #car {
   width: 80px;
   position: absolute;
-  top: 25%;
-  left: 25%;
-  /* filter: drop-shadow(20px 20px 10px ); */
+  z-index: 2;
 }
-
+.car1 {
+  filter: drop-shadow(20px -20px 1px rgb(108, 107, 107, .8));
+}
+.car2 {
+  filter: drop-shadow(-20px 20px 1px rgb(108, 107, 107, .8));
+}
+.car3 {
+  filter: drop-shadow(20px 20px 1px rgb(108, 107, 107, .8));
+}
+.car4 {
+  filter: drop-shadow(-20px -20px 1px rgb(108, 107, 107, .8));
+}
+/* .carShadow {
+  background-color: gray;
+  position: absolute;
+  width: 80px;
+  height: 152px;
+  border-radius: 20px 20px 15px 15px;
+  margin-left: 20px;
+  margin-top: 20px;
+  filter:blur(5px);
+  opacity: .8;
+} */
 
 .item {
   background-color: rgb(159, 204, 244);

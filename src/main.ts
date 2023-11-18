@@ -15,44 +15,60 @@ import './style.css'
 const changeColor = document.querySelector('.changeColor')
 
 
+const carBox = document.querySelector('#carBox') as HTMLImageElement
+const car = document.querySelector('#car') as HTMLImageElement
+const carShadow = document.querySelector('.carShadow') as HTMLImageElement
 
 
-let moveX =  0 
-let moveY =  0 
-document.addEventListener ('click', (event)=> {
-car.style.filter = (dropShadow(10 + 'px'+10 + 'px'+10 + 'px'))
-// car.style.border = `${event.pageX}`
+ let moveX = 0
+ let moveY = 0
 
-})
+
 document.addEventListener ('keydown', (event)=> {
   console.log(event.key);
   
   if (event.key == 'ArrowRight') {
-    moveX = moveX + 10
+    moveX = moveX + 30
     car.style.marginLeft = moveX + 'px'
+    car.classList.add('car1')
+    car.classList.remove('car2')
+    car.classList.remove('car3')
+    car.classList.remove('car4')
     rotateRight()
   } if (event.key == 'ArrowLeft'){
     moveX = moveX - 10
     car.style.marginLeft = moveX + 'px'
+    car.classList.add('car2')
+    car.classList.remove('car1')
+    car.classList.remove('car3')
+    car.classList.remove('car4')
     rotateLeft ()
   } if (event.key == 'ArrowUp') {
     moveY = moveY - 10
     car.style.marginTop = moveY + 'px'
+    car.classList.add('car3')
+    car.classList.remove('car1')
+    car.classList.remove('car2')
+    car.classList.remove('car4')
     rotateUp ()
   } if (event.key == 'ArrowDown') {
     moveY = moveY + 10
     car.style.marginTop = moveY + 'px'
+    car.classList.add('car4')
+    car.classList.remove('car1')
+    car.classList.remove('car2')
+    car.classList.remove('car3')
     rotateDown ()
   }
 })
 
-const car = document.querySelector('#car') as HTMLImageElement
 let deg = 0
 
 function rotateRight () {
   deg=90
   car.style.rotate = deg + 'deg'
   car.style.transition = .5 + 's'
+  car.style.filter
 }
 function rotateLeft () {
   deg =270 
