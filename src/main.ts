@@ -52,9 +52,9 @@ switchLamps2.addEventListener('click', ()=> {
 })
 
 
+//!!!!!!! УДАЛИТЬ НОЛЬ
 
-
-
+let deg = 0
 const svgfile = document.querySelector ('#svgfile')   as HTMLOrSVGImageElement
 svgfile.addEventListener ('click', ()=> {
   
@@ -80,7 +80,8 @@ svgfile.addEventListener ('click', ()=> {
  let moveY = 0
 
 
-document.addEventListener ('keydown' || 'click', (event)=> {
+document.addEventListener ( 'keydown' , (event)=> {
+  console.log(123);
   console.log(event.code);
   
   if (event.key == 'ArrowRight' || event.code == 'KeyD' ) {
@@ -132,7 +133,7 @@ document.addEventListener ('keydown' || 'click', (event)=> {
   }
 })
 
-let deg = 0
+// let deg = 0
 
 function rotateRight () {
   deg=90
