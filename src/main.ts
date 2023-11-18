@@ -81,7 +81,7 @@ svgfile.addEventListener ('click', ()=> {
 
 
 document.addEventListener ( 'keydown' , (event)=> {
-  console.log(123);
+
   console.log(event.code);
   
   if (event.key == 'ArrowRight' || event.code == 'KeyD' ) {
@@ -100,7 +100,7 @@ document.addEventListener ( 'keydown' , (event)=> {
 
 
     
-  } if (event.key == 'ArrowLeft'){
+  } if (event.key == 'ArrowLeft'|| event.code == 'KeyA'){
     moveX = moveX - 10
     car.style.marginLeft = moveX + 'px'
     carWithLamp.style.marginLeft = moveX + 'px'
@@ -110,7 +110,7 @@ document.addEventListener ( 'keydown' , (event)=> {
     car.classList.remove('car3')
     car.classList.remove('car4')
     rotateLeft ()
-  } if (event.key == 'ArrowUp') {
+  } if (event.key == 'ArrowUp'|| event.code == 'KeyW') {
     moveY = moveY - 10
     car.style.marginTop = moveY + 'px'
     carWithLamp.style.marginTop = moveY + 'px'
@@ -120,7 +120,7 @@ document.addEventListener ( 'keydown' , (event)=> {
     car.classList.remove('car2')
     car.classList.remove('car4')
     rotateUp ()
-  } if (event.key == 'ArrowDown') {
+  } if (event.key == 'ArrowDown'|| event.code == 'KeyS') {
     moveY = moveY + 10
     car.style.marginTop = moveY + 'px'
     carWithLamp.style.marginTop = moveY + 'px'
