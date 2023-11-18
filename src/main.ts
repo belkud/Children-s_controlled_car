@@ -19,43 +19,58 @@ const changeColor = document.querySelector('.changeColor')
 
 let moveX =  0 
 let moveY =  0 
+document.addEventListener ('click', (event)=> {
+car.style.filter = (dropShadow(10 + 'px'+10 + 'px'+10 + 'px'))
+// car.style.border = `${event.pageX}`
+
+})
 document.addEventListener ('keydown', (event)=> {
   console.log(event.key);
   
   if (event.key == 'ArrowRight') {
     moveX = moveX + 10
-  data_output.style.marginLeft = moveX + 'px'
-  rotate()
-} if (event.key == 'ArrowLeft'){
-  moveX = moveX - 10
-  data_output.style.marginLeft = moveX + 'px'
-  rotateReverce ()
-} if (event.key == 'ArrowUp') {
-  moveY = moveY - 10
-  data_output.style.marginTop = moveY + 'px'
-} if (event.key == 'ArrowDown') {
-  moveY = moveY + 10
-  data_output.style.marginTop = moveY + 'px'
-}
+    car.style.marginLeft = moveX + 'px'
+    rotateRight()
+  } if (event.key == 'ArrowLeft'){
+    moveX = moveX - 10
+    car.style.marginLeft = moveX + 'px'
+    rotateLeft ()
+  } if (event.key == 'ArrowUp') {
+    moveY = moveY - 10
+    car.style.marginTop = moveY + 'px'
+    rotateUp ()
+  } if (event.key == 'ArrowDown') {
+    moveY = moveY + 10
+    car.style.marginTop = moveY + 'px'
+    rotateDown ()
+  }
 })
 
+const car = document.querySelector('#car') as HTMLImageElement
 let deg = 0
 
-function rotate () {
-  if (deg==90) {
-    return 
-  }
-  deg+=90
-  data_output.style.rotate = deg + 'deg'
-  data_output.style.transition = .5 + 's'
+function rotateRight () {
+  deg=90
+  car.style.rotate = deg + 'deg'
+  car.style.transition = .5 + 's'
 }
-function rotateReverce () {
+function rotateLeft () {
+  deg =270 
   if (deg==0) {
-    return 
+    return deg = -90
   }
-  deg-=90
-  data_output.style.rotate = deg + 'deg'
-  data_output.style.transition = .5 + 's'
+  car.style.rotate = deg + 'deg'
+  car.style.transition = .5 + 's'
+}
+function rotateDown () {
+  deg=180
+  car.style.rotate = deg + 'deg'
+  car.style.transition = .5 + 's'
+}
+function rotateUp () {
+  deg=0
+  car.style.rotate = deg + 'deg'
+  car.style.transition = .5 + 's'
 }
 
 

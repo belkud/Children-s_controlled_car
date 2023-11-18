@@ -21,6 +21,14 @@ body {
   padding: 50px;
 }
 
+#car {
+  width: 80px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  /* filter: drop-shadow(20px 20px 10px ); */
+}
+
 
 .item {
   background-color: rgb(159, 204, 244);
