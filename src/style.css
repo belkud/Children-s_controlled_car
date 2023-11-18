@@ -13,6 +13,7 @@ body {
   /* gap: 50px; */
   scroll-behavior:auto;
   height: 100vh;
+  animation-play-state: ;
 }
 
 

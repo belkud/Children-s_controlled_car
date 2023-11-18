@@ -51,34 +51,38 @@ switchLamps2.addEventListener('click', ()=> {
 
 })
 
-
-//!!!!!!! УДАЛИТЬ НОЛЬ
+  
+let moveX = 0
+let moveY = 0
+ 
 
 let deg = 0
 const svgfile = document.querySelector ('#svgfile')   as HTMLOrSVGImageElement
-svgfile.addEventListener ('mousemove', ()=> {
-  console.log(56);
+svgfile.addEventListener ('mousemove', (event)=> {
+ 
+  moveX = moveX + 2
+  car.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  carWithLamp.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  carWithLamp2.style.transform =   'translateX(' + `${moveX}` + 'px)'
   
-  moveX = moveX + 20
-  car.style.marginLeft = moveX + 'px'
-  carWithLamp.style.marginLeft = moveX + 'px'
-  carWithLamp2.style.marginLeft = moveX + 'px'
-  car.classList.add('car1')
-  car.classList.add('car1')
-  car.classList.remove('car2')
-  car.classList.remove('car3')
-  car.classList.remove('car4')
-  deg=90
-  car.style.rotate = deg + 'deg'
-  carWithLamp.style.rotate = deg + 'deg'
-  carWithLamp2.style.rotate = deg + 'deg'
+  console.log(car.style.transform);
+
+  // carWithLamp.style.transform = moveX + 'px'
+  // carWithLamp2.style.transform = moveX + 'px'
+  // console.log(car.style.transform);
+
+  // car.classList.add('car1')
+  // car.classList.remove('car2')
+  // car.classList.remove('car3')
+  // car.classList.remove('car4')
+  // deg=90
+  // car.style.rotate = deg + 'deg'
+  // carWithLamp.style.rotate = deg + 'deg'
+  // carWithLamp2.style.rotate = deg + 'deg'
 
 })
 
  
- 
- let moveX = 0
- let moveY = 0
 
 
 document.addEventListener ( 'keydown' , (event)=> {
