@@ -2,24 +2,46 @@ import './style.css'
 
 
 
-// const users = document.querySelector('#users') as HTMLButtonElement
-
-  
-//   users.addEventListener('click', ()=> {
-//     setInterval(()=>{
-//       summ++
-//       users.innerHTML = `Счетчик времени: ${summ}`
-//     },1)
-//   })
-
+//!  Автомобиль
 const changeColor = document.querySelector('.changeColor')
 
 
 const carBox = document.querySelector('#carBox') as HTMLImageElement
-const car = document.querySelector('#car') as HTMLImageElement
 const carShadow = document.querySelector('.carShadow') as HTMLImageElement
 
+const car = document.querySelector('#car') as HTMLImageElement
+const carLamp = document.querySelector('#carLamp') as HTMLImageElement
+const switchLamps = document.querySelector('#switchLamps') as HTMLButtonElement
 
+switchLamps.addEventListener('click', ()=>{
+  if (carLamp.style.opacity == '1'){
+    switchLamps.innerHTML = 'Включить фары'
+    carLamp.style.opacity = '0'
+  } else {
+    carLamp.style.opacity = '1'
+    switchLamps.innerHTML = 'Выключить фары'
+
+  }
+
+
+
+
+
+  // if (carLamp.style.opacity = '1') {
+  // } else {
+  // }
+})
+
+// if (data_output.style.backgroundColor == 'red'){
+//   data_output.style.backgroundColor = 'green'
+//   prom1.then((value)=>{
+//    data_output.innerHTML = (value)
+//  })
+// } else {
+//   data_output.style.backgroundColor = 'red'
+//   prom2.catch((value)=>{
+//    data_output.innerHTML = (value)
+//  })
  let moveX = 0
  let moveY = 0
 
@@ -28,16 +50,20 @@ document.addEventListener ('keydown', (event)=> {
   console.log(event.key);
   
   if (event.key == 'ArrowRight') {
-    moveX = moveX + 30
+    moveX = moveX + 15
     car.style.marginLeft = moveX + 'px'
+    carLamp.style.marginLeft = moveX + 'px'
+    car.classList.add('car1')
     car.classList.add('car1')
     car.classList.remove('car2')
     car.classList.remove('car3')
     car.classList.remove('car4')
     rotateRight()
+    
   } if (event.key == 'ArrowLeft'){
     moveX = moveX - 10
     car.style.marginLeft = moveX + 'px'
+    carLamp.style.marginLeft = moveX + 'px'
     car.classList.add('car2')
     car.classList.remove('car1')
     car.classList.remove('car3')
@@ -46,6 +72,7 @@ document.addEventListener ('keydown', (event)=> {
   } if (event.key == 'ArrowUp') {
     moveY = moveY - 10
     car.style.marginTop = moveY + 'px'
+    carLamp.style.marginTop = moveY + 'px'
     car.classList.add('car3')
     car.classList.remove('car1')
     car.classList.remove('car2')
@@ -54,6 +81,7 @@ document.addEventListener ('keydown', (event)=> {
   } if (event.key == 'ArrowDown') {
     moveY = moveY + 10
     car.style.marginTop = moveY + 'px'
+    carLamp.style.marginTop = moveY + 'px'
     car.classList.add('car4')
     car.classList.remove('car1')
     car.classList.remove('car2')
@@ -67,8 +95,7 @@ let deg = 0
 function rotateRight () {
   deg=90
   car.style.rotate = deg + 'deg'
-  car.style.transition = .5 + 's'
-  car.style.filter
+  carLamp.style.rotate = deg + 'deg'
 }
 function rotateLeft () {
   deg =270 
@@ -76,17 +103,18 @@ function rotateLeft () {
     return deg = -90
   }
   car.style.rotate = deg + 'deg'
-  car.style.transition = .5 + 's'
+  carLamp.style.rotate = deg + 'deg'
+
 }
 function rotateDown () {
   deg=180
   car.style.rotate = deg + 'deg'
-  car.style.transition = .5 + 's'
-}
+  carLamp.style.rotate = deg + 'deg'
+  }
 function rotateUp () {
   deg=0
   car.style.rotate = deg + 'deg'
-  car.style.transition = .5 + 's'
+  carLamp.style.rotate = deg + 'deg'
 }
 
 
