@@ -17,19 +17,22 @@
       <li class="list-item"><button data-set="4" class="btn">button 4</button></li>
       <li class="list-item"><button data-set="5" class="btn">button 5</button></li>
     </ul>  
-
+    
     <div id="data_output"></div>
-   
- 
+    
+    
     <div id="carBox"  style=" border: 2px solid #aba7a7; display: flex; top: 25%; left: 25%; ">
       <img id="car" class="car3"   src="public/Ferrari.png"   alt="">
       <img id="carWithLamp" style="opacity: 0;"  src="public/Ferrari2.png"   alt="">
       <img id="carWithLamp2" style="display: none;"   src="public/Ferrari3.png"   alt="">
-    
+      
       <button id="switchLamps">Включить фары</button>
       <button id="switchLamps2" style="margin-left: 10px;">Включить аварийку</button>
-      <button id="signal" style="margin-left: 10px;">Посигналить</button>
+      <button id="signal" onclick="audio.play()" style="margin-left: 10px;">Посигналить</button>
     </div>
+    
+    <audio src="public/Autosignal.mp3"></audio>
+
     <div>
       <button style="width: 100px;" id="bt_1">влево</button>
       <button style="width: 100px;" id="bt_2">вправо</button>
@@ -41,16 +44,21 @@
 
 
   <img id="svgfile" src="public/vite.svg" style="width: 100px;" alt="">
-  
-  
-  <div id="users"></div>
-  
-  <script>
  
+  <script>
+      const audio = new Audio()
+      audio.src =  'public/Autosignal.mp3'
   </script>
-<!-- <a   > cloud </a>
-<a href="#" > cloud </a>
-<a href="#second_page" > second_page </a> -->
+
+
+
+
+
+  <div id="users"></div>
+ 
+
+
+
 </div>
 
 
