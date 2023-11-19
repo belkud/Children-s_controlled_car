@@ -3,6 +3,17 @@ import './style.css'
 
 
 //!  Автомобиль
+
+const audio = new Audio()
+
+const signal = document.querySelector('#signal') as HTMLButtonElement
+signal.addEventListener ('click', ()=> {
+audio.play()
+} )
+
+audio.src =  'public/Autosignal.mp3'
+
+
 const changeColor = document.querySelector('.changeColor')
 
 
@@ -15,6 +26,9 @@ const carWithLamp2 = document.querySelector('#carWithLamp2') as HTMLButtonElemen
 const switchLamps = document.querySelector('#switchLamps') as HTMLButtonElement
 const switchLamps2 = document.querySelector('#switchLamps2') as HTMLButtonElement
 
+
+
+//! Включить фары
 switchLamps.addEventListener('click', ()=>{
   if (carWithLamp.style.opacity == '1'){
     switchLamps.innerHTML = 'Включить фары'
@@ -27,9 +41,7 @@ switchLamps.addEventListener('click', ()=>{
 })
 
 
-
-
-
+//! Включить аварийку
 switchLamps2.addEventListener('click', ()=> {
   carWithLamp2.style.display = 'block'
   if(switchLamps2.innerHTML == 'Включить аварийку') {
@@ -52,48 +64,16 @@ switchLamps2.addEventListener('click', ()=> {
 })
 
   
+
+
 let moveX = 0
 let moveY = 0
-let deg = 0
-
-
-const svgfile = document.querySelector ('#svgfile')   as HTMLOrSVGImageElement
-svgfile.addEventListener ('mousemove', (event)=> {
-  
-  // moveX = moveX + 2
-  // car.style.transform =   'translateX(' + `${moveX}` + 'px)'
-  // carWithLamp.style.transform =   'translateX(' + `${moveX}` + 'px)'
-  // carWithLamp2.style.transform =   'translateX(' + `${moveX}` + 'px)'
-  
-  console.log(car.style.transform);
-  
-  // carWithLamp.style.transform = moveX + 'px'
-  // carWithLamp2.style.transform = moveX + 'px'
-  // console.log(car.style.transform);
-  
-  // car.classList.add('car1')
-  // car.classList.remove('car2')
-  // car.classList.remove('car3')
-  // car.classList.remove('car4')
-  // deg=90
-  // car.style.rotate = deg + 'deg'
-  // carWithLamp.style.rotate = deg + 'deg'
-  // carWithLamp2.style.rotate = deg + 'deg'
-  
-})
-
- 
 
 //! управление машинкой
-
-
-document.addEventListener ( 'keydown' , (event)=> {
-
+  document.addEventListener ( 'keydown' , (event)=> {
   console.log(event.code);
-  
+
   if (event.key == 'ArrowRight' || event.code == 'KeyD' ) {
-    
-    
     moveX = moveX + 15
     car.style.marginLeft = moveX + 'px'
     carWithLamp.style.marginLeft = moveX + 'px'
@@ -105,8 +85,6 @@ document.addEventListener ( 'keydown' , (event)=> {
     car.classList.remove('car4')
     rotateRight()
 
-
-    
   } if (event.key == 'ArrowLeft'|| event.code == 'KeyA'){
     moveX = moveX - 10
     car.style.marginLeft = moveX + 'px'
@@ -117,6 +95,7 @@ document.addEventListener ( 'keydown' , (event)=> {
     car.classList.remove('car3')
     car.classList.remove('car4')
     rotateLeft ()
+
   } if (event.key == 'ArrowUp'|| event.code == 'KeyW') {
     moveY = moveY - 10
     car.style.marginTop = moveY + 'px'
@@ -127,6 +106,7 @@ document.addEventListener ( 'keydown' , (event)=> {
     car.classList.remove('car2')
     car.classList.remove('car4')
     rotateUp ()
+
   } if (event.key == 'ArrowDown'|| event.code == 'KeyS') {
     moveY = moveY + 10
     car.style.marginTop = moveY + 'px'
@@ -204,13 +184,14 @@ document.addEventListener ( 'keydown' , (event)=> {
 
 //! повороты машинки
 
-// let deg = 0
+let deg = 0
 function rotateRight () {
   deg=90
   car.style.rotate = deg + 'deg'
   carWithLamp.style.rotate = deg + 'deg'
   carWithLamp2.style.rotate = deg + 'deg'
 }
+
 function rotateLeft () {
   deg =270 
   if (deg==0) {
@@ -219,14 +200,15 @@ function rotateLeft () {
   car.style.rotate = deg + 'deg'
   carWithLamp.style.rotate = deg + 'deg'
   carWithLamp2.style.rotate = deg + 'deg'
-
 }
+
 function rotateDown () {
   deg=180
   car.style.rotate = deg + 'deg'
   carWithLamp.style.rotate = deg + 'deg'
   carWithLamp2.style.rotate = deg + 'deg'
   }
+
 function rotateUp () {
   deg=0
   car.style.rotate = deg + 'deg'
@@ -238,11 +220,14 @@ function rotateUp () {
 
 
 //! Мини-кнопки
-
 const bt_1 =document.querySelector('#bt_1') as HTMLButtonElement
 const bt_2 =document.querySelector('#bt_2') as HTMLButtonElement
 const bt_3 =document.querySelector('#bt_3') as HTMLButtonElement
 const bt_4 =document.querySelector('#bt_4') as HTMLButtonElement
+const svgfile =document.querySelector('#svgfile') as HTMLOrSVGImageElement
+
+
+
 
 bt_1.addEventListener ('click',()=> {
   moveX = moveX - 15
