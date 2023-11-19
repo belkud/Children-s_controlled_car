@@ -10,6 +10,8 @@ carSignal.src =  'public/Autosignal.mp3'
 const signal = document.querySelector('#signal') as HTMLButtonElement
 signal.addEventListener ('click', ()=> {
   carSignal.play()
+  
+  
 } )
 
 
