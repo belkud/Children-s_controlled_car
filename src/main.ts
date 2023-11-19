@@ -7,7 +7,7 @@ const changeColor = document.querySelector('.changeColor')
 
 
 const carBox = document.querySelector('#carBox') as HTMLImageElement
-const carShadow = document.querySelector('.carShadow') as HTMLImageElement
+ 
 
 const car = document.querySelector('#car') as HTMLImageElement
 const carWithLamp = document.querySelector('#carWithLamp') as HTMLImageElement
@@ -54,23 +54,23 @@ switchLamps2.addEventListener('click', ()=> {
   
 let moveX = 0
 let moveY = 0
- 
-
 let deg = 0
+
+
 const svgfile = document.querySelector ('#svgfile')   as HTMLOrSVGImageElement
 svgfile.addEventListener ('mousemove', (event)=> {
- 
-  moveX = moveX + 2
-  car.style.transform =   'translateX(' + `${moveX}` + 'px)'
-  carWithLamp.style.transform =   'translateX(' + `${moveX}` + 'px)'
-  carWithLamp2.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  
+  // moveX = moveX + 2
+  // car.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  // carWithLamp.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  // carWithLamp2.style.transform =   'translateX(' + `${moveX}` + 'px)'
   
   console.log(car.style.transform);
-
+  
   // carWithLamp.style.transform = moveX + 'px'
   // carWithLamp2.style.transform = moveX + 'px'
   // console.log(car.style.transform);
-
+  
   // car.classList.add('car1')
   // car.classList.remove('car2')
   // car.classList.remove('car3')
@@ -79,10 +79,12 @@ svgfile.addEventListener ('mousemove', (event)=> {
   // car.style.rotate = deg + 'deg'
   // carWithLamp.style.rotate = deg + 'deg'
   // carWithLamp2.style.rotate = deg + 'deg'
-
+  
 })
 
  
+
+//! управление машинкой
 
 
 document.addEventListener ( 'keydown' , (event)=> {
@@ -138,8 +140,71 @@ document.addEventListener ( 'keydown' , (event)=> {
   }
 })
 
-// let deg = 0
 
+ 
+
+// document.addEventListener ( 'keydown' , (event)=> {
+//   console.log(event.code);
+  
+//   if (event.key == 'ArrowRight' || event.code == 'KeyD' ) {
+//     moveX = moveX + 15
+//     moveY = moveY + 0
+//     car.style.transform =   'translateX(' + `${moveX}` + 'px)'
+//     carWithLamp.style.transform =  'translateX(' + `${moveX}` + 'px)'
+//     carWithLamp2.style.transform =  'translateX(' + `${moveX}` + 'px)'    
+//     car.classList.add('car1')
+//     car.classList.add('car1')
+//     car.classList.remove('car2')
+//     car.classList.remove('car3')
+//     car.classList.remove('car4')
+//     rotateRight()
+//     console.log(car.style.transform);
+//   } if (event.key == 'ArrowLeft'|| event.code == 'KeyA'){
+//     moveX = moveX - 15
+//     moveY = moveY + 0
+//     car.style.transform =   'translateX(' + `${moveX}` + 'px)'
+//     carWithLamp.style.transform =  'translateX(' + `${moveX}` + 'px)'
+//     carWithLamp2.style.transform =  'translateX(' + `${moveX}` + 'px)'
+//     car.classList.add('car2')
+//     car.classList.remove('car1')
+//     car.classList.remove('car3')
+//     car.classList.remove('car4')
+//     rotateLeft ()
+//     console.log(car.style.transform);
+//   } if (event.key == 'ArrowUp'|| event.code == 'KeyW') {
+//   moveY = moveY + 15
+//   moveX = moveX + 0
+//     car.style.transform =   'translateY(' + `${moveY}` + 'px)'
+//     carWithLamp.style.transform =  'translateY(' + `${moveY}` + 'px)'
+//     carWithLamp2.style.transform =  'translateY(' + `${moveY}` + 'px)'
+//     car.classList.add('car3')
+//     car.classList.remove('car1')
+//     car.classList.remove('car2')
+//     car.classList.remove('car4')
+//     rotateUp ()
+//     console.log(car.style.transform);
+//   } if (event.key == 'ArrowDown'|| event.code == 'KeyS') {
+//     moveY = moveY - 15
+//     moveX = moveX + 0
+//     car.style.transform =   'translateY(' + `${moveY}` + 'px)'
+//     carWithLamp.style.transform =  'translateY(' + `${moveY}` + 'px)'
+//     carWithLamp2.style.transform =  'translateY(' + `${moveY}` + 'px)'
+//     car.classList.add('car4')
+//     car.classList.remove('car1')
+//     car.classList.remove('car2')
+//     car.classList.remove('car3')
+//     rotateDown ()
+//     console.log(car.style.transform);
+//   }
+// })
+ 
+
+
+
+
+//! повороты машинки
+
+// let deg = 0
 function rotateRight () {
   deg=90
   car.style.rotate = deg + 'deg'
@@ -169,6 +234,49 @@ function rotateUp () {
   carWithLamp2.style.rotate = deg + 'deg'
 }
 
+ 
+
+
+//! Мини-кнопки
+
+const bt_1 =document.querySelector('#bt_1') as HTMLButtonElement
+const bt_2 =document.querySelector('#bt_2') as HTMLButtonElement
+const bt_3 =document.querySelector('#bt_3') as HTMLButtonElement
+const bt_4 =document.querySelector('#bt_4') as HTMLButtonElement
+
+bt_1.addEventListener ('click',()=> {
+  moveX = moveX - 15
+  moveY = moveY + 0
+  svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
+  svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  console.log(svgfile.style.transform );
+}) 
+
+bt_2.addEventListener ('click',()=> {
+  moveX = moveX + 15
+  moveY = moveY + 0
+  svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
+  svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  console.log(svgfile.style.transform );
+}) 
+
+bt_3.addEventListener ('click',()=> {
+  moveX = moveX +0
+  moveY = moveY - 15
+  svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
+  console.log(svgfile.style.transform );
+}) 
+
+bt_4.addEventListener ('click',()=> {
+  moveY = moveY + 15
+  moveX = moveX +0
+  svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
+  console.log(svgfile.style.transform );
+}) 
+
+
 
 
 
@@ -176,6 +284,8 @@ const list_item = document.querySelectorAll('.list-item>button')
 
   for (let i=0; i<list_item.length; i++)(
   list_item[i].addEventListener ('click', ()=> {
+
+    
     // list_item.classList.toggle('changeColor')
     console.log(`${i+1}`);
     
