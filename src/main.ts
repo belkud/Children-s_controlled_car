@@ -4,19 +4,19 @@ import './style.css'
 
 //!  Автомобиль
 
-const audio = new Audio()
+const carSignal = new Audio()
+carSignal.src =  'public/Autosignal.mp3'
 
 const signal = document.querySelector('#signal') as HTMLButtonElement
 signal.addEventListener ('click', ()=> {
-audio.play()
+  carSignal.play()
 } )
 
-audio.src =  'public/Autosignal.mp3'
+
+
 
 
 const changeColor = document.querySelector('.changeColor')
-
-
 const carBox = document.querySelector('#carBox') as HTMLImageElement
  
 
@@ -66,10 +66,11 @@ switchLamps2.addEventListener('click', ()=> {
   
 
 
-let moveX = 0
-let moveY = 0
-
 //! управление машинкой
+
+  let moveX = 0
+  let moveY = 0
+
   document.addEventListener ( 'keydown' , (event)=> {
   console.log(event.code);
 
@@ -78,7 +79,6 @@ let moveY = 0
     car.style.marginLeft = moveX + 'px'
     carWithLamp.style.marginLeft = moveX + 'px'
     carWithLamp2.style.marginLeft = moveX + 'px'
-    car.classList.add('car1')
     car.classList.add('car1')
     car.classList.remove('car2')
     car.classList.remove('car3')
@@ -192,6 +192,13 @@ function rotateRight () {
   carWithLamp2.style.rotate = deg + 'deg'
 }
 
+function rotateDown () {
+  deg=180
+  car.style.rotate = deg + 'deg'
+  carWithLamp.style.rotate = deg + 'deg'
+  carWithLamp2.style.rotate = deg + 'deg'
+  }
+
 function rotateLeft () {
   deg =270 
   if (deg==0) {
@@ -201,13 +208,6 @@ function rotateLeft () {
   carWithLamp.style.rotate = deg + 'deg'
   carWithLamp2.style.rotate = deg + 'deg'
 }
-
-function rotateDown () {
-  deg=180
-  car.style.rotate = deg + 'deg'
-  carWithLamp.style.rotate = deg + 'deg'
-  carWithLamp2.style.rotate = deg + 'deg'
-  }
 
 function rotateUp () {
   deg=0
