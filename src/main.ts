@@ -20,7 +20,10 @@ signal.addEventListener ('click', ()=> {
 
 const changeColor = document.querySelector('.changeColor')
 const carBox = document.querySelector('#carBox') as HTMLImageElement
- 
+console.log(
+
+  carBox
+);
 
 const car = document.querySelector('#car') as HTMLImageElement
 const carWithLamp = document.querySelector('#carWithLamp') as HTMLImageElement
@@ -268,13 +271,17 @@ bt_4.addEventListener ('click',()=> {
 
 
 const list_item = document.querySelectorAll('.list-item>button') 
-
+let seconds = 0
   for (let i=0; i<list_item.length; i++)(
   list_item[i].addEventListener ('click', ()=> {
-
-    
-    // list_item.classList.toggle('changeColor')
-    console.log(`${i+1}`);
+     
+ setInterval(() => {
+   seconds++
+   list_item[4].innerHTML = `${seconds}` 
+ }, 1000);
+ 
+ 
+    // console.log(`${i+1}`);
     
 }))
 
