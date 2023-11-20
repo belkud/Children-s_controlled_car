@@ -235,10 +235,10 @@ const svgfile =document.querySelector('#svgfile') as HTMLOrSVGImageElement
 
 
 bt_1.addEventListener ('click',()=> {
-  moveX = moveX - 15
   moveY = moveY + 0
-  svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
+  moveX = moveX - 15
   svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
   console.log(svgfile.style.transform );
 }) 
 
