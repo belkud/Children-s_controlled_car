@@ -2,6 +2,69 @@ import './style.css'
 
 
 
+
+
+//  if (confirm ('покрасить background?')) {
+
+
+//   // location.href= 'https://dzen.ru/?clid=2233626&yredirect=true'
+//  }
+
+// console.log(location);
+
+
+
+const sun = document.querySelector ('#sun') as HTMLDivElement
+const moon = document.querySelector ('#moon') as HTMLDivElement
+const theme = document.querySelector ('#theme') as HTMLDivElement
+
+// theme.addEventListener ('click', ()=> {
+//   if () {
+//     moon.style.opacity = '0'
+//     moon.style.transition = 1 +'s'
+//   }
+  
+// })
+
+
+sun.addEventListener ('click', ()=>{
+  document.body.style.transition = .5 +'s'
+  document.body.style.background = 'lightgray'
+  theme.style.color = 'black'
+
+  sun.style.opacity = '0'
+  moon.style.opacity = '1'
+  sun.style.transition = .5 + 's'
+  moon.style.transition = .5 + 's'
+  moon.style.display = 'block'
+
+  setTimeout(() => {
+    sun.style.display = 'none';
+  },500)
+  console.log(2);
+})
+
+
+moon.addEventListener ('click', ()=>{
+  document.body.style.transition = .5 +'s'
+  document.body.style.background = 'black'
+  theme.style.color = 'aliceblue'
+  carWithLamp.style.opacity = '1'
+
+  sun.style.opacity = '1'
+  moon.style.opacity = '0'
+  moon.style.transition = .5 + 's'
+  sun.style.transition = .5 + 's'
+  sun.style.display = 'block'
+setTimeout(() => {
+  moon.style.display = 'none'
+}, 500);
+console.log(1);
+
+})
+
+
+
 //!  Автомобиль
 
 const carSignal = new Audio()
@@ -52,6 +115,7 @@ switchLamps2.addEventListener('click', ()=> {
   if(switchLamps2.innerHTML == 'Включить аварийку') {
     switchLamps2.innerHTML = 'Выключить аварийку'
   
+
     setInterval (() => {
       setTimeout(() => {
         carWithLamp2.style.opacity = '0'
@@ -60,6 +124,11 @@ switchLamps2.addEventListener('click', ()=> {
         carWithLamp2.style.opacity = '1'
       }, 500);
     },1000);
+    
+    // setTimeout(() => {
+    //   carWithLamp2.style.opacity = '0'
+      
+    // }, 5000);
     
   } else {
     switchLamps2.innerHTML = 'Включить аварийку'
@@ -235,17 +304,17 @@ const svgfile =document.querySelector('#svgfile') as HTMLOrSVGImageElement
 
 
 bt_1.addEventListener ('click',()=> {
-  moveY = moveY + 0
   moveX = moveX - 15
+  moveY = moveY + 0
+  // svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
   svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
-  svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
   console.log(svgfile.style.transform );
 }) 
 
 bt_2.addEventListener ('click',()=> {
   moveX = moveX + 15
   moveY = moveY + 0
-  svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
+  // svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
   svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
   console.log(svgfile.style.transform );
 }) 
@@ -253,7 +322,7 @@ bt_2.addEventListener ('click',()=> {
 bt_3.addEventListener ('click',()=> {
   moveX = moveX +0
   moveY = moveY - 15
-  svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  // svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
   svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
   console.log(svgfile.style.transform );
 }) 
@@ -261,7 +330,7 @@ bt_3.addEventListener ('click',()=> {
 bt_4.addEventListener ('click',()=> {
   moveY = moveY + 15
   moveX = moveX +0
-  svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  // svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
   svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
   console.log(svgfile.style.transform );
 }) 

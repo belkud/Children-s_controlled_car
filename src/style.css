@@ -4,31 +4,36 @@ html {
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
+  /* margin: 0px; */
+  /* padding: 0px; */
   background-color: lightgrey;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   /* margin: 50px; */
-  /* gap: 50px; */
+  gap: 10px;
   scroll-behavior:auto;
   height: 100vh;
   animation-play-state: ;
 }
 
-
-#first_page, #second_page {
-  gap: 20px;
-  padding: 50px;
+#theme {
+   min-height: 150px; 
+   margin-left: 90%;    
 }
 
-#car, #carWithLamp, #carWithLamp2 {
+
+ 
+
+#car, #carWithLamp, #carWithLamp2, #carWithLamp3 {
   width: 80px;
   position: absolute;
   z-index: 2;
   transition: .3s;
- 
-  /* border:  2px solid red; */
+  border:  2px solid red;
+}
+
+#carWithLamp3 { 
+  margin-top: -59px;
 }
  
 
@@ -57,9 +62,7 @@ body {
   filter: drop-shadow(-20px -20px 1px rgb(108, 107, 107, .8));
 }
 
-.item {
-  background-color: rgb(159, 204, 244);
-}
+ 
 .list-item {
   list-style-type: none;
 }
