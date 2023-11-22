@@ -53,16 +53,16 @@ body {
  
 
 .car1 {
-  filter: drop-shadow(20px -20px 1px rgb(108, 107, 107, .8));
+  filter: drop-shadow(20px -20px 1px rgb(108, 107, 107, .6));
 }
 .car2 {
-  filter: drop-shadow(-20px 20px 1px rgb(108, 107, 107, .8));
+  filter: drop-shadow(-20px 20px 1px rgb(108, 107, 107, .6));
 }
 .car3 {
-  filter: drop-shadow(20px 20px 1px rgb(108, 107, 107, .8));
+  filter: drop-shadow(20px 20px 1px rgb(108, 107, 107, .6));
 }
 .car4 {
-  filter: drop-shadow(-20px -20px 1px rgb(108, 107, 107, .8));
+  filter: drop-shadow(-20px -20px 1px rgb(108, 107, 107, .6));
 }
 
  

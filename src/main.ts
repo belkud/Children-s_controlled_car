@@ -276,8 +276,8 @@ function rotateDown () {
   }
 
 function rotateLeft () {
-  deg =270 
-  if (deg==0|| deg ==360 ) {
+  deg = 270 
+  if (deg==0 || deg ==360 ) {
     return deg = 90
   }
   car.style.rotate = deg + 'deg'
@@ -297,6 +297,13 @@ function rotateUp () {
  
 
 
+// !Баг с миниатюрами (не особо важно)
+
+//! Неверное движение svgfile по осям -->
+
+
+
+
 //! Мини-кнопки
 const bt_1 =document.querySelector('#bt_1') as HTMLButtonElement
 const bt_2 =document.querySelector('#bt_2') as HTMLButtonElement
@@ -308,34 +315,29 @@ const svgfile =document.querySelector('#svgfile') as HTMLOrSVGImageElement
 
 
 bt_1.addEventListener ('click',()=> {
-  moveX = moveX - 15
-  moveY = moveY + 0
-  // svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
-  svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  moveX -= 15
+  svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
   console.log(svgfile.style.transform );
 }) 
 
 bt_2.addEventListener ('click',()=> {
   moveX = moveX + 15
   moveY = moveY + 0
-  // svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
-  svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
+  svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
   console.log(svgfile.style.transform );
 }) 
 
 bt_3.addEventListener ('click',()=> {
   moveX = moveX +0
   moveY = moveY - 15
-  // svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
-  svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
+  svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
   console.log(svgfile.style.transform );
 }) 
 
 bt_4.addEventListener ('click',()=> {
   moveY = moveY + 15
   moveX = moveX +0
-  // svgfile.style.transform =   'translateX(' + `${moveX}` + 'px)'
-  svgfile.style.transform =   'translateY(' + `${moveY}` + 'px)'
+  svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
   console.log(svgfile.style.transform );
 }) 
 
