@@ -36,6 +36,9 @@ body {
   z-index: 1;
 }
  
+#carBox {
+/* border: 1px solid #000 !important; */
+}
 
 #switchLamps, #switchLamps2, #signal {
   background-color:darkseagreen;

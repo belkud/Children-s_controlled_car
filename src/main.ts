@@ -37,6 +37,7 @@ sun.addEventListener ('click', ()=>{
   sun.style.opacity = '0'
   moon.style.opacity = '1'
   sun.style.transition = .5 + 's'
+  sun.style.rotate = 45 + 'deg'
   moon.style.transition = .5 + 's'
   moon.style.display = 'block'
   car.style.filter = 'block'
@@ -276,8 +277,8 @@ function rotateDown () {
 
 function rotateLeft () {
   deg =270 
-  if (deg==0) {
-    return deg = -90
+  if (deg==0|| deg ==360 ) {
+    return deg = 90
   }
   car.style.rotate = deg + 'deg'
   carWithLamp.style.rotate = deg + 'deg'
