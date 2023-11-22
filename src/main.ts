@@ -75,7 +75,7 @@ console.log(1);
 //!  Автомобиль
 
 const carSignal = new Audio()
-carSignal.src =  '/Autosignal.mp3'
+carSignal.src =  'Autosignal.mp3'
 
 const signal = document.querySelector('#signal') as HTMLButtonElement
 signal.addEventListener ('click', ()=> {
