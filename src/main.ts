@@ -26,7 +26,7 @@ const theme = document.querySelector ('#theme') as HTMLDivElement
   
 // })
 
-
+//! Изменение дневной\ночной темы
 sun.addEventListener ('click', ()=>{
   document.body.style.transition = .5 +'s'
   document.body.style.background = 'lightgray'
@@ -75,13 +75,11 @@ console.log(1);
 //!  Автомобиль
 
 const carSignal = new Audio()
-carSignal.src =  'public/Autosignal.mp3'
+carSignal.src =  '/Autosignal.mp3'
 
 const signal = document.querySelector('#signal') as HTMLButtonElement
 signal.addEventListener ('click', ()=> {
   carSignal.play()
-  
-  
 } )
 
 
@@ -112,7 +110,6 @@ switchLamps.addEventListener('click', ()=>{
   } else {
     carWithLamp.style.opacity = '1'
     switchLamps.innerHTML = 'Выключить фары'
-
   }
 })
 
@@ -122,8 +119,6 @@ switchLamps2.addEventListener('click', ()=> {
   carWithLamp2.style.display = 'block'
   if(switchLamps2.innerHTML == 'Включить аварийку') {
     switchLamps2.innerHTML = 'Выключить аварийку'
-  
-
     setInterval (() => {
       setTimeout(() => {
         carWithLamp2.style.opacity = '0'
@@ -132,17 +127,10 @@ switchLamps2.addEventListener('click', ()=> {
         carWithLamp2.style.opacity = '1'
       }, 500);
     },1000);
-    
-    // setTimeout(() => {
-    //   carWithLamp2.style.opacity = '0'
-      
-    // }, 5000);
-    
   } else {
     switchLamps2.innerHTML = 'Включить аварийку'
     carWithLamp2.style.display = 'none'
   }
-
 })
 
   
@@ -155,7 +143,6 @@ switchLamps2.addEventListener('click', ()=> {
 
   document.addEventListener ( 'keydown' , (event)=> {
   console.log(event.code);
-
   if (event.key == 'ArrowRight' || event.code == 'KeyD' ) {
     moveX = moveX + 15
     car.style.marginLeft = moveX + 'px'
