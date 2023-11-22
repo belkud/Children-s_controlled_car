@@ -31,12 +31,16 @@ sun.addEventListener ('click', ()=>{
   document.body.style.transition = .5 +'s'
   document.body.style.background = 'lightgray'
   theme.style.color = 'black'
+  carWithLamp.style.opacity = '0'
+  carWithLamp3.style.opacity = '0'
 
   sun.style.opacity = '0'
   moon.style.opacity = '1'
   sun.style.transition = .5 + 's'
   moon.style.transition = .5 + 's'
   moon.style.display = 'block'
+  car.style.filter = 'block'
+  car.style.opacity = '1'
 
   setTimeout(() => {
     sun.style.display = 'none';
@@ -50,6 +54,9 @@ moon.addEventListener ('click', ()=>{
   document.body.style.background = 'black'
   theme.style.color = 'aliceblue'
   carWithLamp.style.opacity = '1'
+  carWithLamp3.style.opacity = '.8'
+  car.style.opacity = '0'
+  
 
   sun.style.opacity = '1'
   moon.style.opacity = '0'
@@ -91,6 +98,7 @@ console.log(
 const car = document.querySelector('#car') as HTMLImageElement
 const carWithLamp = document.querySelector('#carWithLamp') as HTMLImageElement
 const carWithLamp2 = document.querySelector('#carWithLamp2') as HTMLButtonElement
+const carWithLamp3 = document.querySelector('#carWithLamp3') as HTMLButtonElement
 const switchLamps = document.querySelector('#switchLamps') as HTMLButtonElement
 const switchLamps2 = document.querySelector('#switchLamps2') as HTMLButtonElement
 
@@ -153,6 +161,7 @@ switchLamps2.addEventListener('click', ()=> {
     car.style.marginLeft = moveX + 'px'
     carWithLamp.style.marginLeft = moveX + 'px'
     carWithLamp2.style.marginLeft = moveX + 'px'
+    carWithLamp3.style.marginLeft = moveX + 'px'
     car.classList.add('car1')
     car.classList.remove('car2')
     car.classList.remove('car3')
@@ -164,6 +173,7 @@ switchLamps2.addEventListener('click', ()=> {
     car.style.marginLeft = moveX + 'px'
     carWithLamp.style.marginLeft = moveX + 'px'
     carWithLamp2.style.marginLeft = moveX + 'px'
+    carWithLamp3.style.marginLeft = moveX + 'px'
     car.classList.add('car2')
     car.classList.remove('car1')
     car.classList.remove('car3')
@@ -175,6 +185,7 @@ switchLamps2.addEventListener('click', ()=> {
     car.style.marginTop = moveY + 'px'
     carWithLamp.style.marginTop = moveY + 'px'
     carWithLamp2.style.marginTop = moveY + 'px'
+    carWithLamp3.style.marginTop = moveY + 'px'
     car.classList.add('car3')
     car.classList.remove('car1')
     car.classList.remove('car2')
@@ -186,6 +197,7 @@ switchLamps2.addEventListener('click', ()=> {
     car.style.marginTop = moveY + 'px'
     carWithLamp.style.marginTop = moveY + 'px'
     carWithLamp2.style.marginTop = moveY + 'px'
+    carWithLamp3.style.marginTop = moveY + 'px'
     car.classList.add('car4')
     car.classList.remove('car1')
     car.classList.remove('car2')
@@ -264,6 +276,7 @@ function rotateRight () {
   car.style.rotate = deg + 'deg'
   carWithLamp.style.rotate = deg + 'deg'
   carWithLamp2.style.rotate = deg + 'deg'
+  carWithLamp3.style.rotate = deg + 'deg'
 }
 
 function rotateDown () {
@@ -271,6 +284,7 @@ function rotateDown () {
   car.style.rotate = deg + 'deg'
   carWithLamp.style.rotate = deg + 'deg'
   carWithLamp2.style.rotate = deg + 'deg'
+  carWithLamp3.style.rotate = deg + 'deg'
   }
 
 function rotateLeft () {
@@ -281,6 +295,7 @@ function rotateLeft () {
   car.style.rotate = deg + 'deg'
   carWithLamp.style.rotate = deg + 'deg'
   carWithLamp2.style.rotate = deg + 'deg'
+  carWithLamp3.style.rotate = deg + 'deg'
 }
 
 function rotateUp () {
@@ -288,6 +303,7 @@ function rotateUp () {
   car.style.rotate = deg + 'deg'
   carWithLamp.style.rotate = deg + 'deg'
   carWithLamp2.style.rotate = deg + 'deg'
+  carWithLamp3.style.rotate = deg + 'deg'
 }
 
  
