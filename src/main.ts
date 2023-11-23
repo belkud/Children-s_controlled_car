@@ -29,15 +29,18 @@ const theme = document.querySelector ('#theme') as HTMLDivElement
 //! Изменение дневной\ночной темы
 sun.addEventListener ('click', ()=>{
   document.body.style.transition = .5 +'s'
-  document.body.style.background = 'lightgray'
-  theme.style.color = 'black'
-  carWithLamp.style.opacity = '0'
-  carWithLamp3.style.opacity = '0'
+  document.body.style.background = 'black'
+  theme.style.color = 'aliceblue'
+  carWithLamp.style.opacity = '1'
+  carWithLamp3.style.opacity = '.6'
+  car.style.opacity = '0'
 
-  sun.style.opacity = '0'
-  moon.style.opacity = '1'
+
+
+  // sun.style.opacity = '0'
+  // moon.style.opacity = '1'
+  // sun.style.rotate = 45 + 'deg'
   sun.style.transition = .5 + 's'
-  sun.style.rotate = 45 + 'deg'
   moon.style.transition = .5 + 's'
   moon.style.display = 'block'
   car.style.filter = 'block'
@@ -52,15 +55,14 @@ sun.addEventListener ('click', ()=>{
 
 moon.addEventListener ('click', ()=>{
   document.body.style.transition = .5 +'s'
-  document.body.style.background = 'black'
-  theme.style.color = 'aliceblue'
-  carWithLamp.style.opacity = '1'
-  carWithLamp3.style.opacity = '.8'
-  car.style.opacity = '0'
+  document.body.style.background = 'lightgray'
+  theme.style.color = 'black'
+  carWithLamp.style.opacity = '0'
+  carWithLamp3.style.opacity = '0'
   
 
   sun.style.opacity = '1'
-  moon.style.opacity = '0'
+  // moon.style.opacity = '0'
   moon.style.transition = .5 + 's'
   sun.style.transition = .5 + 's'
   sun.style.display = 'block'
@@ -145,11 +147,10 @@ switchLamps2.addEventListener('click', ()=> {
   document.addEventListener ( 'keydown' , (event)=> {
   console.log(event.code);
   if (event.key == 'ArrowRight' || event.code == 'KeyD' ) {
-    moveX = moveX + 15
-    car.style.marginLeft = moveX + 'px'
-    carWithLamp.style.marginLeft = moveX + 'px'
-    carWithLamp2.style.marginLeft = moveX + 'px'
-    carWithLamp3.style.marginLeft = moveX + 'px'
+    moveX = moveX + 10
+    moveY = moveY + 0
+    carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
+    carBox.style.transition = .3 + 's'
     car.classList.add('car1')
     car.classList.remove('car2')
     car.classList.remove('car3')
@@ -158,10 +159,8 @@ switchLamps2.addEventListener('click', ()=> {
 
   } if (event.key == 'ArrowLeft'|| event.code == 'KeyA'){
     moveX = moveX - 10
-    car.style.marginLeft = moveX + 'px'
-    carWithLamp.style.marginLeft = moveX + 'px'
-    carWithLamp2.style.marginLeft = moveX + 'px'
-    carWithLamp3.style.marginLeft = moveX + 'px'
+    moveY = moveY + 0
+    carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
     car.classList.add('car2')
     car.classList.remove('car1')
     car.classList.remove('car3')
@@ -170,87 +169,27 @@ switchLamps2.addEventListener('click', ()=> {
 
   } if (event.key == 'ArrowUp'|| event.code == 'KeyW') {
     moveY = moveY - 10
-    car.style.marginTop = moveY + 'px'
-    carWithLamp.style.marginTop = moveY + 'px'
-    carWithLamp2.style.marginTop = moveY + 'px'
-    carWithLamp3.style.marginTop = moveY + 'px'
+    moveX = moveX + 0
+    carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
     car.classList.add('car3')
     car.classList.remove('car1')
     car.classList.remove('car2')
     car.classList.remove('car4')
-    rotateUp ()
+    // rotateUp ()
 
   } if (event.key == 'ArrowDown'|| event.code == 'KeyS') {
     moveY = moveY + 10
-    car.style.marginTop = moveY + 'px'
-    carWithLamp.style.marginTop = moveY + 'px'
-    carWithLamp2.style.marginTop = moveY + 'px'
-    carWithLamp3.style.marginTop = moveY + 'px'
+    moveX = moveX + 0
+    carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
     car.classList.add('car4')
     car.classList.remove('car1')
     car.classList.remove('car2')
     car.classList.remove('car3')
-    rotateDown ()
+    // rotateDown ()
   }
 })
 
-
  
-
-// document.addEventListener ( 'keydown' , (event)=> {
-//   console.log(event.code);
-  
-//   if (event.key == 'ArrowRight' || event.code == 'KeyD' ) {
-//     moveX = moveX + 15
-//     moveY = moveY + 0
-//     car.style.transform =   'translateX(' + `${moveX}` + 'px)'
-//     carWithLamp.style.transform =  'translateX(' + `${moveX}` + 'px)'
-//     carWithLamp2.style.transform =  'translateX(' + `${moveX}` + 'px)'    
-//     car.classList.add('car1')
-//     car.classList.add('car1')
-//     car.classList.remove('car2')
-//     car.classList.remove('car3')
-//     car.classList.remove('car4')
-//     rotateRight()
-//     console.log(car.style.transform);
-//   } if (event.key == 'ArrowLeft'|| event.code == 'KeyA'){
-//     moveX = moveX - 15
-//     moveY = moveY + 0
-//     car.style.transform =   'translateX(' + `${moveX}` + 'px)'
-//     carWithLamp.style.transform =  'translateX(' + `${moveX}` + 'px)'
-//     carWithLamp2.style.transform =  'translateX(' + `${moveX}` + 'px)'
-//     car.classList.add('car2')
-//     car.classList.remove('car1')
-//     car.classList.remove('car3')
-//     car.classList.remove('car4')
-//     rotateLeft ()
-//     console.log(car.style.transform);
-//   } if (event.key == 'ArrowUp'|| event.code == 'KeyW') {
-//   moveY = moveY + 15
-//   moveX = moveX + 0
-//     car.style.transform =   'translateY(' + `${moveY}` + 'px)'
-//     carWithLamp.style.transform =  'translateY(' + `${moveY}` + 'px)'
-//     carWithLamp2.style.transform =  'translateY(' + `${moveY}` + 'px)'
-//     car.classList.add('car3')
-//     car.classList.remove('car1')
-//     car.classList.remove('car2')
-//     car.classList.remove('car4')
-//     rotateUp ()
-//     console.log(car.style.transform);
-//   } if (event.key == 'ArrowDown'|| event.code == 'KeyS') {
-//     moveY = moveY - 15
-//     moveX = moveX + 0
-//     car.style.transform =   'translateY(' + `${moveY}` + 'px)'
-//     carWithLamp.style.transform =  'translateY(' + `${moveY}` + 'px)'
-//     carWithLamp2.style.transform =  'translateY(' + `${moveY}` + 'px)'
-//     car.classList.add('car4')
-//     car.classList.remove('car1')
-//     car.classList.remove('car2')
-//     car.classList.remove('car3')
-//     rotateDown ()
-//     console.log(car.style.transform);
-//   }
-// })
  
 
 
@@ -260,19 +199,18 @@ switchLamps2.addEventListener('click', ()=> {
 
 let deg = 0
 function rotateRight () {
-  deg=90
-  car.style.rotate = deg + 'deg'
-  carWithLamp.style.rotate = deg + 'deg'
-  carWithLamp2.style.rotate = deg + 'deg'
-  carWithLamp3.style.rotate = deg + 'deg'
+  deg+=90
+  if (deg==180) {
+    deg=90
+  } 
+  carBox.style.rotate = deg + 'deg'
+  carBox.style.transformOrigin = `center, center`
+
 }
 
 function rotateDown () {
   deg=180
-  car.style.rotate = deg + 'deg'
-  carWithLamp.style.rotate = deg + 'deg'
-  carWithLamp2.style.rotate = deg + 'deg'
-  carWithLamp3.style.rotate = deg + 'deg'
+  carBox.style.rotate = deg + 'deg'
   }
 
 function rotateLeft () {
@@ -280,18 +218,12 @@ function rotateLeft () {
   if (deg==0 || deg ==360 ) {
     return deg = 90
   }
-  car.style.rotate = deg + 'deg'
-  carWithLamp.style.rotate = deg + 'deg'
-  carWithLamp2.style.rotate = deg + 'deg'
-  carWithLamp3.style.rotate = deg + 'deg'
+  carBox.style.rotate = deg + 'deg'
 }
 
 function rotateUp () {
   deg=0
-  car.style.rotate = deg + 'deg'
-  carWithLamp.style.rotate = deg + 'deg'
-  carWithLamp2.style.rotate = deg + 'deg'
-  carWithLamp3.style.rotate = deg + 'deg'
+  carBox.style.rotate = deg + 'deg'
 }
 
  
@@ -316,28 +248,33 @@ const svgfile =document.querySelector('#svgfile') as HTMLOrSVGImageElement
 
 bt_1.addEventListener ('click',()=> {
   moveX -= 15
-  svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
+  moveY = moveY + 0
+  // svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
+  carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
   console.log(svgfile.style.transform );
 }) 
 
 bt_2.addEventListener ('click',()=> {
   moveX = moveX + 15
   moveY = moveY + 0
-  svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
+  // svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
+  carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
   console.log(svgfile.style.transform );
 }) 
 
 bt_3.addEventListener ('click',()=> {
   moveX = moveX +0
   moveY = moveY - 15
-  svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
+  // svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
+  carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
   console.log(svgfile.style.transform );
 }) 
 
 bt_4.addEventListener ('click',()=> {
   moveY = moveY + 15
   moveX = moveX +0
-  svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
+  // svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
+  carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
   console.log(svgfile.style.transform );
 }) 
 
