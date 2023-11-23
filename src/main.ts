@@ -16,6 +16,7 @@ import './style.css'
 
 const sun = document.querySelector ('#sun') as HTMLDivElement
 const moon = document.querySelector ('#moon') as HTMLDivElement
+const cloud = document.querySelector ('#cloud') as HTMLDivElement
 const theme = document.querySelector ('#theme') as HTMLDivElement
 
 

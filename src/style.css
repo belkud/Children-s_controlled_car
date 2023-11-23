@@ -30,9 +30,12 @@ body {
   
   #moon, #sun {
 transform: translateY(60px);
+filter: drop-shadow(10px 10px 10px white);
 }
 
-
+#cloud {
+  filter: drop-shadow(10px 10px 5px rgb(218, 233, 246));
+}
  
 
 #car, #carWithLamp, #carWithLamp2, #carWithLamp3 {
