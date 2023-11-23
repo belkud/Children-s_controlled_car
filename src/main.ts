@@ -18,13 +18,11 @@ const sun = document.querySelector ('#sun') as HTMLDivElement
 const moon = document.querySelector ('#moon') as HTMLDivElement
 const theme = document.querySelector ('#theme') as HTMLDivElement
 
-// theme.addEventListener ('click', ()=> {
-//   if () {
-//     moon.style.opacity = '0'
-//     moon.style.transition = 1 +'s'
-//   }
-  
-// })
+
+
+
+let moveX = 0
+let moveY = 0
 
 //! Изменение дневной\ночной темы
 sun.addEventListener ('click', ()=>{
@@ -33,21 +31,23 @@ sun.addEventListener ('click', ()=>{
   theme.style.color = 'aliceblue'
   carWithLamp.style.opacity = '1'
   carWithLamp3.style.opacity = '.6'
-  car.style.opacity = '0'
-
-
-
-  // sun.style.opacity = '0'
-  // moon.style.opacity = '1'
-  // sun.style.rotate = 45 + 'deg'
+  // car.style.opacity = '0'
+  car.style.filter = 'block'
+  car.style.opacity = '1'
+ 
   sun.style.transition = .5 + 's'
   moon.style.transition = .5 + 's'
   moon.style.display = 'block'
-  car.style.filter = 'block'
-  car.style.opacity = '1'
+
+
+
+  sun.style.transform = `translate(0px, 120px)`
+  moon.style.transform = `translate(0px, 60px)`
+  
 
   setTimeout(() => {
-    sun.style.display = 'none';
+ 
+    // sun.style.display = 'none';
   },500)
   console.log(2);
 })
@@ -62,12 +62,13 @@ moon.addEventListener ('click', ()=>{
   
 
   sun.style.opacity = '1'
-  // moon.style.opacity = '0'
+  sun.style.transform = `translate(0px, 60px)`
+  moon.style.transform = `translate(0px, 120px)`
   moon.style.transition = .5 + 's'
   sun.style.transition = .5 + 's'
   sun.style.display = 'block'
 setTimeout(() => {
-  moon.style.display = 'none'
+  // moon.style.display = 'none'
 }, 500);
 console.log(1);
 
@@ -141,8 +142,7 @@ switchLamps2.addEventListener('click', ()=> {
 
 //! управление машинкой
 
-  let moveX = 0
-  let moveY = 0
+
 
   document.addEventListener ( 'keydown' , (event)=> {
   console.log(event.code);

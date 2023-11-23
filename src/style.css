@@ -20,15 +20,15 @@ body {
    min-height: 150px; 
    margin-left: 80%;
    width: 20%; 
-   border: 2px solid red;
+   /* border: 2px solid red; */
    display: flex;
    text-align: center; 
    justify-content: center;
+   overflow:hidden;
   }
   
   
   #moon, #sun {
-  border: 2px solid red;
 transform: translateY(60px);
 }
 
