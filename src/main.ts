@@ -44,10 +44,11 @@ sun.addEventListener ('click', ()=>{
 
   sun.style.transform = `translate(0px, 120px)`
   moon.style.transform = `translate(0px, 60px)`
-  
-
+  cloud.style.filter = `brightness(.4)`
+  // filter: brightness(.8)
+  // drop-shadow(10px 10px 5px rgb(218, 233, 246, .4));
   setTimeout(() => {
- 
+    
     // sun.style.display = 'none';
   },500)
   console.log(2);
@@ -61,18 +62,20 @@ moon.addEventListener ('click', ()=>{
   carWithLamp.style.opacity = '0'
   carWithLamp3.style.opacity = '0'
   
-
+  
   sun.style.opacity = '1'
   sun.style.transform = `translate(0px, 60px)`
   moon.style.transform = `translate(0px, 120px)`
+  cloud.style.filter = `brightness(1)`
+
   moon.style.transition = .5 + 's'
   sun.style.transition = .5 + 's'
   sun.style.display = 'block'
-setTimeout(() => {
-  // moon.style.display = 'none'
-}, 500);
-console.log(1);
-
+  setTimeout(() => {
+    // moon.style.display = 'none'
+  }, 500);
+  console.log(1);
+  
 })
 
 
