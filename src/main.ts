@@ -201,7 +201,7 @@ const svgfile =document.querySelector('#svgfile') as HTMLOrSVGImageElement
 
 
 bt_1.addEventListener ('click',()=> {
-  moveX -= 15
+  moveX -= 25
   moveY = moveY + 0
   car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
   car_container.style.transition = .5 + 's'
@@ -214,7 +214,7 @@ bt_1.addEventListener ('click',()=> {
 }) 
 
 bt_2.addEventListener ('click',()=> {
-  moveX = moveX + 15
+  moveX = moveX + 25
   moveY = moveY + 0
   car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
   car_container.style.transition = .5 + 's'
@@ -228,7 +228,7 @@ bt_2.addEventListener ('click',()=> {
 
 bt_3.addEventListener ('click',()=> {
   moveX = moveX +0
-  moveY = moveY - 15
+  moveY = moveY - 25
   car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
   car_container.style.transition = .5 + 's'
   carBox.style.transition = .5 + 's'
@@ -240,7 +240,7 @@ bt_3.addEventListener ('click',()=> {
 }) 
 
 bt_4.addEventListener ('click',()=> {
-  moveY = moveY + 15
+  moveY = moveY + 25
   moveX = moveX +0
   car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
   car_container.style.transition = .5 + 's'
