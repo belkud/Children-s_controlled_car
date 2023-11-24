@@ -32,7 +32,6 @@ sun.addEventListener ('click', ()=>{
   theme.style.color = 'aliceblue'
   carWithLamp.style.opacity = '1'
   carWithLamp3.style.opacity = '.6'
-  // car.style.opacity = '0'
   car.style.opacity = '1'
   car.style.filter = 'none'
   
@@ -43,9 +42,7 @@ sun.addEventListener ('click', ()=>{
   sun.style.transform = `translate(0px, 120px)`
   moon.style.transform = `translate(0px, 60px)`
   cloud.style.filter = `brightness(.6)`
-  // filter: brightness(.8)
-  // drop-shadow(10px 10px 5px rgb(218, 233, 246, .4));
-  
+   
 })
 
 
@@ -169,7 +166,6 @@ switchLamps2.addEventListener('click', ()=> {
     car.classList.remove('car3')
     car.classList.remove('car4')
     rotateLeft ()
-    // rotateLeft2 ()
 
   } if (event.key == 'ArrowUp'|| event.code == 'KeyW') {
     moveY = moveY - 15
@@ -200,6 +196,70 @@ switchLamps2.addEventListener('click', ()=> {
 console.log(carBox);
 
  
+//! Управление со смартфона
+const bt_1 =document.querySelector('#bt_1') as HTMLButtonElement
+const bt_2 =document.querySelector('#bt_2') as HTMLButtonElement
+const bt_3 =document.querySelector('#bt_3') as HTMLButtonElement
+const bt_4 =document.querySelector('#bt_4') as HTMLButtonElement
+const svgfile =document.querySelector('#svgfile') as HTMLOrSVGImageElement
+
+
+
+
+bt_1.addEventListener ('click',()=> {
+  moveX -= 15
+  moveY = moveY + 0
+  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+  car_container.style.transition = .5 + 's'
+  carBox.style.transition = .5 + 's'
+  car.classList.add('car2')
+  car.classList.remove('car1')
+  car.classList.remove('car3')
+  car.classList.remove('car4')
+  rotateLeft()
+}) 
+
+bt_2.addEventListener ('click',()=> {
+  moveX = moveX + 15
+  moveY = moveY + 0
+  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+  car_container.style.transition = .5 + 's'
+  carBox.style.transition = .5 + 's'
+    car.classList.add('car1')
+    car.classList.remove('car2')
+    car.classList.remove('car3')
+    car.classList.remove('car4')
+  rotateRight () 
+}) 
+
+bt_3.addEventListener ('click',()=> {
+  moveX = moveX +0
+  moveY = moveY - 15
+  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+  car_container.style.transition = .5 + 's'
+  carBox.style.transition = .5 + 's'
+  car.classList.add('car3')
+  car.classList.remove('car1')
+  car.classList.remove('car2')
+  car.classList.remove('car4')
+  rotateUp ()
+}) 
+
+bt_4.addEventListener ('click',()=> {
+  moveY = moveY + 15
+  moveX = moveX +0
+  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+  car_container.style.transition = .5 + 's'
+  carBox.style.transition = .5 + 's'
+  car.classList.add('car4')
+  car.classList.remove('car1')
+  car.classList.remove('car2')
+  car.classList.remove('car3')
+  rotateDown()
+}) 
+
+
+
  
 //! Координаты машинки
 const page1 = document.querySelector('.page1') as HTMLDivElement
@@ -272,51 +332,6 @@ function rotateUp () {
  
 
 
-//! Управление со смартфона
-const bt_1 =document.querySelector('#bt_1') as HTMLButtonElement
-const bt_2 =document.querySelector('#bt_2') as HTMLButtonElement
-const bt_3 =document.querySelector('#bt_3') as HTMLButtonElement
-const bt_4 =document.querySelector('#bt_4') as HTMLButtonElement
-const svgfile =document.querySelector('#svgfile') as HTMLOrSVGImageElement
-
-
-
-
-bt_1.addEventListener ('click',()=> {
-  moveX -= 15
-  moveY = moveY + 0
-  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
-  car_container.style.transition = .5 + 's'
-  carBox.style.transition = .5 + 's'
-  rotateLeft()
-}) 
-
-bt_2.addEventListener ('click',()=> {
-  moveX = moveX + 15
-  moveY = moveY + 0
-  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
-  car_container.style.transition = .5 + 's'
-  carBox.style.transition = .5 + 's'
-  rotateRight () 
-}) 
-
-bt_3.addEventListener ('click',()=> {
-  moveX = moveX +0
-  moveY = moveY - 15
-  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
-  car_container.style.transition = .5 + 's'
-  carBox.style.transition = .5 + 's'
-  rotateUp()
-}) 
-
-bt_4.addEventListener ('click',()=> {
-  moveY = moveY + 15
-  moveX = moveX +0
-  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
-  car_container.style.transition = .5 + 's'
-  carBox.style.transition = .5 + 's'
-  rotateDown()
-}) 
 
 
 
