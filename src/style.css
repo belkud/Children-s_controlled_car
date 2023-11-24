@@ -166,7 +166,7 @@ cursor:pointer;
   width: 500px;
 }
 
-.carControl>button {
+.carControl>button, .innerCarControl>button {
 border-radius: 5px;
 background-color: rgb(67, 187, 187);
 color: aliceblue;
@@ -179,7 +179,8 @@ color: aliceblue;
   .carControl {
     display: grid;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
+    justify-items: center;
   }
 
 
