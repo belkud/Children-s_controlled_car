@@ -70,7 +70,7 @@ cursor:pointer;
 #car_container {
   height: 212px;
   width: 80px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   position: absolute;
   transition: 0.3;
 }

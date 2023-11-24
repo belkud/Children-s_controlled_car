@@ -296,6 +296,8 @@ bt_1.addEventListener ('click',()=> {
   moveY = moveY + 0
   car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
   car_container.style.transition = .5 + 's'
+  carBox.style.transition = .5 + 's'
+  rotateLeft()
 }) 
 
 bt_2.addEventListener ('click',()=> {
@@ -303,6 +305,8 @@ bt_2.addEventListener ('click',()=> {
   moveY = moveY + 0
   car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
   car_container.style.transition = .5 + 's'
+  carBox.style.transition = .5 + 's'
+  rotateRight () 
 }) 
 
 bt_3.addEventListener ('click',()=> {
@@ -310,6 +314,8 @@ bt_3.addEventListener ('click',()=> {
   moveY = moveY - 15
   car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
   car_container.style.transition = .5 + 's'
+  carBox.style.transition = .5 + 's'
+  rotateUp()
 }) 
 
 bt_4.addEventListener ('click',()=> {
@@ -317,6 +323,8 @@ bt_4.addEventListener ('click',()=> {
   moveX = moveX +0
   car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
   car_container.style.transition = .5 + 's'
+  carBox.style.transition = .5 + 's'
+  rotateDown()
 }) 
 
 
