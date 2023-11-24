@@ -201,18 +201,31 @@ console.log(carBox);
 
  
  
+//! Координаты машинки
+const page1 = document.querySelector('.page1') as HTMLDivElement
 
+page1.addEventListener('click', function (e) {
+  let x = e.pageX - this.clientLeft - this.offsetLeft - 30
+  let y = e.pageY - this.clientTop - this.offsetTop - 30
+  if (x < 0) {
+     x = 0
+  }
+  if (x > document.clientWidth - 50) {
+     x = document.clientWidth - balls.width
+  }
+  if (y < 0) {
+     y = 0
+  }
+  if (y > document.clientHeight - 50) {
+     y = document.clientHeight - balls.height
+  }
 
-
+  car_container.style.left = x + 'px'
+  car_container.style.top = y + 'px'
+})
 
 //! повороты машинки
-  //  balls.style.rotate = rotate2()
- 
-
- 
-
-
-
+  
 let deg = 0
 function rotateRight () { 
   deg+=90
@@ -281,33 +294,29 @@ const svgfile =document.querySelector('#svgfile') as HTMLOrSVGImageElement
 bt_1.addEventListener ('click',()=> {
   moveX -= 15
   moveY = moveY + 0
-  // svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
-  carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
-  console.log(svgfile.style.transform );
+  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+  car_container.style.transition = .5 + 's'
 }) 
 
 bt_2.addEventListener ('click',()=> {
   moveX = moveX + 15
   moveY = moveY + 0
-  // svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
-  carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
-  console.log(svgfile.style.transform );
+  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+  car_container.style.transition = .5 + 's'
 }) 
 
 bt_3.addEventListener ('click',()=> {
   moveX = moveX +0
   moveY = moveY - 15
-  // svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
-  carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
-  console.log(svgfile.style.transform );
+  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+  car_container.style.transition = .5 + 's'
 }) 
 
 bt_4.addEventListener ('click',()=> {
   moveY = moveY + 15
   moveX = moveX +0
-  // svgfile.style.transform =   `translate(${moveX}px,${moveY}px)`
-  carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
-  console.log(svgfile.style.transform );
+  car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+  car_container.style.transition = .5 + 's'
 }) 
 
 

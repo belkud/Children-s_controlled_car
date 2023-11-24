@@ -16,6 +16,13 @@ body {
   animation-play-state: ;
 }
 
+.page1 {
+  width: 100%;
+  height: 100vh;
+  /* gap: 10px; */
+  /* border: 10px solid #000; */
+}
+
 #theme {
    min-height: 150px; 
    margin-left: 80%;
