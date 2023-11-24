@@ -166,9 +166,24 @@ cursor:pointer;
   width: 500px;
 }
 
+.carControl>button {
+border-radius: 5px;
+background-color: rgb(67, 187, 187);
+color: aliceblue;
+}
+
 @media screen and (max-width:768px) {
   .carButton {
     display: flex;
   }
+  .carControl {
+    display: grid;
+    justify-content: center;
+    gap: 5px;
+  }
+
+
+
+
 }
 
