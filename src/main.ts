@@ -72,7 +72,7 @@ moon.addEventListener ('click', ()=>{
 
 //!  Автомобиль
 
-//!  Машинки
+//!  Проекции машинок
 const carBox = document.querySelector('#carBox') as HTMLImageElement
 const car = document.querySelector('#car') as HTMLImageElement
 const carWithLamp = document.querySelector('#carWithLamp') as HTMLImageElement
@@ -80,20 +80,21 @@ const carWithLamp2 = document.querySelector('#carWithLamp2') as HTMLButtonElemen
 const carWithLamp3 = document.querySelector('#carWithLamp3') as HTMLButtonElement
 
 
+// carBox.fillRect(rectX, rectY, rectW, rectH);
+// var c=document.getElementById("myCanvas");
 //! Кнопки
 const switchLamps = document.querySelector('#switchLamps') as HTMLButtonElement
 const switchLamps2 = document.querySelector('#switchLamps2') as HTMLButtonElement
 const signal = document.querySelector('#signal') as HTMLButtonElement
 
+
+
+//! Посигналить
 const carSignal = new Audio()
 carSignal.src =  'Autosignal.mp3'
-
 signal.addEventListener ('click', ()=> {
   carSignal.play()
 } )
-
-
-
 
 
 
@@ -109,12 +110,14 @@ switchLamps.addEventListener('click', ()=>{
 })
 
 
+
 //! Включить аварийку
 switchLamps2.addEventListener('click', ()=> {
   carWithLamp2.style.display = 'block'
   if(switchLamps2.innerHTML == 'Включить аварийку') {
     switchLamps2.innerHTML = 'Выключить аварийку'
-    setInterval (() => {
+    var inter = 0;
+    var inter = setInterval (() => {
       setTimeout(() => {
         carWithLamp2.style.opacity = '0'
       }, 0);
@@ -123,6 +126,7 @@ switchLamps2.addEventListener('click', ()=> {
       }, 500);
     },1000);
   } else {
+    clearInterval (inter)
     switchLamps2.innerHTML = 'Включить аварийку'
     carWithLamp2.style.display = 'none'
   }
@@ -131,9 +135,7 @@ switchLamps2.addEventListener('click', ()=> {
   
 
 
-//! управление машинкой
-
-
+//! Управление машинкой
 
   document.addEventListener ( 'keydown' , (event)=> {
   console.log(event.code);
@@ -141,7 +143,7 @@ switchLamps2.addEventListener('click', ()=> {
     moveX = moveX + 10
     moveY = moveY + 0
     carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
-    carBox.style.transition = .3 + 's'
+    carBox.style.transition = .5 + 's'
     car.classList.add('car1')
     car.classList.remove('car2')
     car.classList.remove('car3')
@@ -166,7 +168,7 @@ switchLamps2.addEventListener('click', ()=> {
     car.classList.remove('car1')
     car.classList.remove('car2')
     car.classList.remove('car4')
-    // rotateUp ()
+    rotateUp ()
 
   } if (event.key == 'ArrowDown'|| event.code == 'KeyS') {
     moveY = moveY + 10
@@ -176,7 +178,7 @@ switchLamps2.addEventListener('click', ()=> {
     car.classList.remove('car1')
     car.classList.remove('car2')
     car.classList.remove('car3')
-    // rotateDown ()
+    rotateDown ()
   }
 })
 
@@ -187,32 +189,38 @@ switchLamps2.addEventListener('click', ()=> {
 
 
 //! повороты машинки
-
+ 
 let deg = 0
 function rotateRight () {
-  deg+=90
-  if (deg==180) {
-    deg=90
-  } 
+  // moveX = moveX - 10
+  // moveY = moveY + 0
+  // carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
+  deg=90
+  // if (deg==180) {
+  //   deg=90
+  // } 
+ 
   carBox.style.rotate = deg + 'deg'
-  carBox.style.transformOrigin = `center, center`
 
 }
-
 function rotateDown () {
+ 
   deg=180
   carBox.style.rotate = deg + 'deg'
   }
 
 function rotateLeft () {
+ 
   deg = 270 
-  if (deg==0 || deg ==360 ) {
-    return deg = 90
-  }
+  // if (deg==0 || deg ==360 ) {
+  //   return deg = 270
+  // }
   carBox.style.rotate = deg + 'deg'
 }
 
 function rotateUp () {
+  
+   
   deg=0
   carBox.style.rotate = deg + 'deg'
 }
