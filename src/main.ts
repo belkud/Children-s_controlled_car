@@ -356,9 +356,7 @@ list_item.forEach(list_item=>
 
 
 
-
-const forest = document.querySelector ('#forest') as HTMLPictureElement
-// forest.style.width = 500+'px'
+ 
 
 //! 3 этапа загрузки HTML страницы
 // 1

@@ -25,7 +25,7 @@ body {
    min-height: 150px; 
    margin-left: 75%;
    width: 20%; 
-   border: 2px solid red;
+   /* border: 2px solid red; */
    display: flex;
    text-align: center; 
    justify-content: center;
@@ -173,11 +173,7 @@ cursor:pointer;
   background-color: pink !important;
 }
 
-
-#forest {
-  border:  2px solid red;
-  width: 500px;
-}
+ 
 
 .carControl>button, .innerCarControl>button {
 border-radius: 5px;
@@ -191,18 +187,19 @@ transition: .5s;
 background-color: rgb(22, 79, 79);
 transition: .5s;
 }
-
+.carButton {
+  display: flex;
+  justify-content: center
+}
+.carControl {
+  display: grid;
+  justify-content: center;
+  gap: 10px;
+  justify-items: center;
+}
 
 @media screen and (max-width:768px) {
-  .carButton {
-    display: flex;
-  }
-  .carControl {
-    display: grid;
-    justify-content: center;
-    gap: 10px;
-    justify-items: center;
-  }
+
 
 
 
