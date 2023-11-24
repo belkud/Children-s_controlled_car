@@ -56,8 +56,16 @@ cursor:pointer;
   width: 80px;
   /* border: 1px solid red; */
   position: absolute;
-  transition: 0.3;
+  /* transition:ease; */
   transform-origin: 40px 143px;
+}
+
+#car_container {
+  height: 212px;
+  width: 80px;
+  border: 1px solid red;
+  position: absolute;
+  transition: 0.3;
 }
 
 #switchLamps, #switchLamps2, #signal {

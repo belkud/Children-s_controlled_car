@@ -78,6 +78,7 @@ const car = document.querySelector('#car') as HTMLImageElement
 const carWithLamp = document.querySelector('#carWithLamp') as HTMLImageElement
 const carWithLamp2 = document.querySelector('#carWithLamp2') as HTMLButtonElement
 const carWithLamp3 = document.querySelector('#carWithLamp3') as HTMLButtonElement
+const car_container = document.querySelector('#car_container') as HTMLDivElement
 
 
 // carBox.fillRect(rectX, rectY, rectW, rectH);
@@ -146,9 +147,10 @@ switchLamps2.addEventListener('click', ()=> {
   document.addEventListener ( 'keydown' , (event)=> {
   console.log(event.code);
   if (event.key == 'ArrowRight' || event.code == 'KeyD' ) {
-    // moveX = moveX + 10
-    // moveY = moveY + 0
-    // carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
+    moveX = moveX + 15
+    moveY = moveY + 0
+    car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+    car_container.style.transition = .5 + 's'
     carBox.style.transition = .5 + 's'
     car.classList.add('car1')
     car.classList.remove('car2')
@@ -157,20 +159,24 @@ switchLamps2.addEventListener('click', ()=> {
     rotateRight()
 
   } if (event.key == 'ArrowLeft'|| event.code == 'KeyA'){
-    // moveX = moveX - 10
-    // moveY = moveY + 0
-    // carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
+    moveX = moveX - 15
+    moveY = moveY + 0
+    car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+    car_container.style.transition = .5 + 's'
+    carBox.style.transition = .5 + 's'
     car.classList.add('car2')
     car.classList.remove('car1')
     car.classList.remove('car3')
     car.classList.remove('car4')
     rotateLeft ()
-    rotateLeft2 ()
+    // rotateLeft2 ()
 
   } if (event.key == 'ArrowUp'|| event.code == 'KeyW') {
-    // moveY = moveY - 10
-    // moveX = moveX + 0
-    // carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
+    moveY = moveY - 15
+    moveX = moveX + 0
+    car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+    car_container.style.transition = .5 + 's'
+    carBox.style.transition = .5 + 's'
     car.classList.add('car3')
     car.classList.remove('car1')
     car.classList.remove('car2')
@@ -178,9 +184,11 @@ switchLamps2.addEventListener('click', ()=> {
     rotateUp ()
 
   } if (event.key == 'ArrowDown'|| event.code == 'KeyS') {
-    // moveY = moveY + 10
-    // moveX = moveX + 0
-    // carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
+    moveY = moveY + 15
+    moveX = moveX + 0
+    car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+    car_container.style.transition = .5 + 's'
+    carBox.style.transition = .5 + 's'
     car.classList.add('car4')
     car.classList.remove('car1')
     car.classList.remove('car2')
