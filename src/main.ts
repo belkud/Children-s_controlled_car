@@ -562,15 +562,3 @@ data_output.addEventListener ('click', ()=>{
      })
     }
 })
-
-
-// digital.addEventListener ('click', (e)=>{
-//   if (e.target.style.backgroundColor == 'lightgray')  {
-//      e.target.style.backgroundColor = 'red'
-//      e.target.style.color = 'lightgrey'
-     
-//   } else{
-//      e.target.style.backgroundColor = 'lightgray'
-//      e.target.style.color = 'red'
-//   }
-// }));
