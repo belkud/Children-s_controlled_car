@@ -135,6 +135,7 @@ switchLamps2.addEventListener('click', ()=> {
   
 
 
+
 //! Управление машинкой
 
   document.addEventListener ( 'keydown' , (event)=> {
