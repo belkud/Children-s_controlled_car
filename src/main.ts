@@ -33,25 +33,19 @@ sun.addEventListener ('click', ()=>{
   carWithLamp.style.opacity = '1'
   carWithLamp3.style.opacity = '.6'
   // car.style.opacity = '0'
-  car.style.filter = 'block'
   car.style.opacity = '1'
- 
+  car.style.filter = 'none'
+  
   sun.style.transition = .5 + 's'
   moon.style.transition = .5 + 's'
   moon.style.display = 'block'
-
-
-
+  
   sun.style.transform = `translate(0px, 120px)`
   moon.style.transform = `translate(0px, 60px)`
-  cloud.style.filter = `brightness(.4)`
+  cloud.style.filter = `brightness(.6)`
   // filter: brightness(.8)
   // drop-shadow(10px 10px 5px rgb(218, 233, 246, .4));
-  setTimeout(() => {
-    
-    // sun.style.display = 'none';
-  },500)
-  console.log(2);
+  
 })
 
 
@@ -61,6 +55,7 @@ moon.addEventListener ('click', ()=>{
   theme.style.color = 'black'
   carWithLamp.style.opacity = '0'
   carWithLamp3.style.opacity = '0'
+  car.style.filter = ''
   
   
   sun.style.opacity = '1'
@@ -71,42 +66,34 @@ moon.addEventListener ('click', ()=>{
   moon.style.transition = .5 + 's'
   sun.style.transition = .5 + 's'
   sun.style.display = 'block'
-  setTimeout(() => {
-    // moon.style.display = 'none'
-  }, 500);
-  console.log(1);
-  
 })
 
 
 
 //!  Автомобиль
 
+//!  Машинки
+const carBox = document.querySelector('#carBox') as HTMLImageElement
+const car = document.querySelector('#car') as HTMLImageElement
+const carWithLamp = document.querySelector('#carWithLamp') as HTMLImageElement
+const carWithLamp2 = document.querySelector('#carWithLamp2') as HTMLButtonElement
+const carWithLamp3 = document.querySelector('#carWithLamp3') as HTMLButtonElement
+
+
+//! Кнопки
+const switchLamps = document.querySelector('#switchLamps') as HTMLButtonElement
+const switchLamps2 = document.querySelector('#switchLamps2') as HTMLButtonElement
+const signal = document.querySelector('#signal') as HTMLButtonElement
+
 const carSignal = new Audio()
 carSignal.src =  'Autosignal.mp3'
 
-const signal = document.querySelector('#signal') as HTMLButtonElement
 signal.addEventListener ('click', ()=> {
   carSignal.play()
 } )
 
 
 
-
-
-const changeColor = document.querySelector('.changeColor')
-const carBox = document.querySelector('#carBox') as HTMLImageElement
-console.log(
-
-  carBox
-);
-
-const car = document.querySelector('#car') as HTMLImageElement
-const carWithLamp = document.querySelector('#carWithLamp') as HTMLImageElement
-const carWithLamp2 = document.querySelector('#carWithLamp2') as HTMLButtonElement
-const carWithLamp3 = document.querySelector('#carWithLamp3') as HTMLButtonElement
-const switchLamps = document.querySelector('#switchLamps') as HTMLButtonElement
-const switchLamps2 = document.querySelector('#switchLamps2') as HTMLButtonElement
 
 
 
@@ -297,7 +284,7 @@ let seconds = 0
  }, 1000);
  
  
-    // console.log(`${i+1}`);
+    console.log(`${i+1}`);
     
 }))
 
