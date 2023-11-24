@@ -35,13 +35,12 @@ sun.addEventListener ('click', ()=>{
   car.style.opacity = '1'
   car.style.filter = 'none'
   
+  sun.style.transform = `translate(0px, 120px)`
   sun.style.transition = .5 + 's'
+  cloud.style.filter = `brightness(.6)`
+  moon.style.transform = `translate(0px, 60px)`
   moon.style.transition = .5 + 's'
   moon.style.display = 'block'
-  
-  sun.style.transform = `translate(0px, 120px)`
-  moon.style.transform = `translate(0px, 60px)`
-  cloud.style.filter = `brightness(.6)`
    
 })
 
@@ -54,15 +53,13 @@ moon.addEventListener ('click', ()=>{
   carWithLamp3.style.opacity = '0'
   car.style.filter = ''
   
-  
   sun.style.opacity = '1'
   sun.style.transform = `translate(0px, 60px)`
-  moon.style.transform = `translate(0px, 120px)`
-  cloud.style.filter = `brightness(1)`
-
-  moon.style.transition = .5 + 's'
   sun.style.transition = .5 + 's'
   sun.style.display = 'block'
+  cloud.style.filter = `brightness(1)`
+  moon.style.transform = `translate(0px, 120px)`
+  moon.style.transition = .5 + 's'
 })
 
 
