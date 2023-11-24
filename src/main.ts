@@ -232,10 +232,9 @@ function rotateRight () {
   if (deg>=91|| deg<=360 ) {
     deg=90
   } 
- 
   carBox.style.rotate = deg + 'deg'
-
 }
+
 function rotateDown () {
   deg+=90
   if (deg>=181||deg<=90) {
@@ -245,11 +244,10 @@ function rotateDown () {
   }
 
 function rotateLeft () {
-  deg+=90
-  if (deg>=271||deg<=180) {
-    deg=270 
-  }  
-  carBox.style.rotate = deg + 'deg'
+  if (deg==0) {deg-=90}
+  else {deg=270}
+  carBox.style.rotate = deg + 'deg'  
+  if (deg==-90) deg=270
 }
 
 // function rotateLeft2 () {
@@ -274,14 +272,7 @@ function rotateUp () {
  
 
 
-// !Баг с миниатюрами (не особо важно)
-
-//! Неверное движение svgfile по осям -->
-
-
-
-
-//! Мини-кнопки
+//! Управление со смартфона
 const bt_1 =document.querySelector('#bt_1') as HTMLButtonElement
 const bt_2 =document.querySelector('#bt_2') as HTMLButtonElement
 const bt_3 =document.querySelector('#bt_3') as HTMLButtonElement
