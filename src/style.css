@@ -200,7 +200,7 @@ transition: .5s;
 
 @media screen and (max-width:768px) {
   #car_container {
-    left: 41% !important;
+    left: 39% !important;
   }
   .carControl>button, .innerCarControl>button {
   width: 120px !important;
