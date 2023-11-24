@@ -204,25 +204,25 @@ console.log(carBox);
 //! Координаты машинки
 const page1 = document.querySelector('.page1') as HTMLDivElement
 
-page1.addEventListener('click', function (e) {
-  let x = e.pageX - this.clientLeft - this.offsetLeft - 30
-  let y = e.pageY - this.clientTop - this.offsetTop - 30
-  if (x < 0) {
-     x = 0
-  }
-  if (x > document.clientWidth - 50) {
-     x = document.clientWidth - balls.width
-  }
-  if (y < 0) {
-     y = 0
-  }
-  if (y > document.clientHeight - 50) {
-     y = document.clientHeight - balls.height
-  }
+// page1.addEventListener('keydown', function (e) {
+//   let x = e.pageX - this.clientLeft - this.offsetLeft - 30
+//   let y = e.pageY - this.clientTop - this.offsetTop - 30
+//   if (x < 0) {
+//      x = 0
+//   }
+//   if (x > document.clientWidth - 50) {
+//      x = document.clientWidth - car_container.width
+//   }
+//   if (y < 0) {
+//      y = 0
+//   }
+//   if (y > document.clientHeight - 50) {
+//      y = document.clientHeight - car_container.height
+//   }
 
-  car_container.style.left = x + 'px'
-  car_container.style.top = y + 'px'
-})
+//   car_container.style.left = x + 'px'
+//   car_container.style.top = y + 'px'
+// })
 
 //! повороты машинки
   

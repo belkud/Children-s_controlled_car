@@ -13,7 +13,7 @@ body {
   gap: 10px;
   scroll-behavior:auto;
   height: 100vh;
-  animation-play-state: ;
+  /* animation-play-state: ; */
 }
 
 .page1 {
