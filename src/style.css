@@ -23,7 +23,7 @@ body {
 
 #theme {
    min-height: 150px; 
-   margin-left: 80%;
+   margin-left: 75%;
    width: 20%; 
    border: 2px solid red;
    display: flex;
@@ -81,16 +81,21 @@ cursor:pointer;
   transition: 0.3;
 }
 
-#switchLamps, #switchLamps2, #signal {
+.carButton>button {
   background-color:darkseagreen;
   color: aliceblue;
   border: 2px solid green;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-top: 180px;
   padding: 3px;
   width: 150px;
+  transition: .1s;
 }
 
+.carButton>button:active {
+  background-color:rgb(3, 57, 3);
+  transition: .1s;
+}
  
 
 .car1 {
