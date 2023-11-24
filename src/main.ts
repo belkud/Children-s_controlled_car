@@ -114,9 +114,9 @@ switchLamps.addEventListener('click', ()=>{
 //! Включить аварийку
 switchLamps2.addEventListener('click', ()=> {
   carWithLamp2.style.display = 'block'
+  // var inter = 0;
   if(switchLamps2.innerHTML == 'Включить аварийку') {
     switchLamps2.innerHTML = 'Выключить аварийку'
-    var inter = 0;
     var inter = setInterval (() => {
       setTimeout(() => {
         carWithLamp2.style.opacity = '0'
@@ -125,13 +125,18 @@ switchLamps2.addEventListener('click', ()=> {
         carWithLamp2.style.opacity = '1'
       }, 500);
     },1000);
+    console.log((inter));
   } else {
-    clearInterval (inter)
+    // clearTimeout(inter);
+    // console.log((inter));
+
     switchLamps2.innerHTML = 'Включить аварийку'
     carWithLamp2.style.display = 'none'
+    
   }
 })
 
+ 
   
 
 
@@ -141,9 +146,9 @@ switchLamps2.addEventListener('click', ()=> {
   document.addEventListener ( 'keydown' , (event)=> {
   console.log(event.code);
   if (event.key == 'ArrowRight' || event.code == 'KeyD' ) {
-    moveX = moveX + 10
-    moveY = moveY + 0
-    carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
+    // moveX = moveX + 10
+    // moveY = moveY + 0
+    // carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
     carBox.style.transition = .5 + 's'
     car.classList.add('car1')
     car.classList.remove('car2')
@@ -152,19 +157,20 @@ switchLamps2.addEventListener('click', ()=> {
     rotateRight()
 
   } if (event.key == 'ArrowLeft'|| event.code == 'KeyA'){
-    moveX = moveX - 10
-    moveY = moveY + 0
-    carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
+    // moveX = moveX - 10
+    // moveY = moveY + 0
+    // carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
     car.classList.add('car2')
     car.classList.remove('car1')
     car.classList.remove('car3')
     car.classList.remove('car4')
     rotateLeft ()
+    rotateLeft2 ()
 
   } if (event.key == 'ArrowUp'|| event.code == 'KeyW') {
-    moveY = moveY - 10
-    moveX = moveX + 0
-    carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
+    // moveY = moveY - 10
+    // moveX = moveX + 0
+    // carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
     car.classList.add('car3')
     car.classList.remove('car1')
     car.classList.remove('car2')
@@ -172,9 +178,9 @@ switchLamps2.addEventListener('click', ()=> {
     rotateUp ()
 
   } if (event.key == 'ArrowDown'|| event.code == 'KeyS') {
-    moveY = moveY + 10
-    moveX = moveX + 0
-    carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
+    // moveY = moveY + 10
+    // moveX = moveX + 0
+    // carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
     car.classList.add('car4')
     car.classList.remove('car1')
     car.classList.remove('car2')
@@ -183,6 +189,8 @@ switchLamps2.addEventListener('click', ()=> {
   }
 })
 
+console.log(carBox);
+
  
  
 
@@ -190,39 +198,55 @@ switchLamps2.addEventListener('click', ()=> {
 
 
 //! повороты машинки
+  //  balls.style.rotate = rotate2()
  
+
+ 
+
+
+
 let deg = 0
-function rotateRight () {
-  // moveX = moveX - 10
-  // moveY = moveY + 0
-  // carBox.style.transform =  `translate(${moveX}px,${moveY}px)`
-  deg=90
-  // if (deg==180) {
-  //   deg=90
-  // } 
+function rotateRight () { 
+  deg+=90
+  if (deg>=91|| deg<=360 ) {
+    deg=90
+  } 
  
   carBox.style.rotate = deg + 'deg'
 
 }
 function rotateDown () {
- 
-  deg=180
+  deg+=90
+  if (deg>=181||deg<=90) {
+    deg=180
+  } 
   carBox.style.rotate = deg + 'deg'
   }
 
 function rotateLeft () {
- 
-  deg = 270 
-  // if (deg==0 || deg ==360 ) {
-  //   return deg = 270
-  // }
+  deg+=90
+  if (deg>=271||deg<=180) {
+    deg=270 
+  }  
   carBox.style.rotate = deg + 'deg'
 }
 
+// function rotateLeft2 () {
+//   deg+=90 
+//   if (deg==270){
+//     deg=360
+//   }
+// }
+
 function rotateUp () {
+  deg+=90
+  if (deg >=0|| deg<=90) {
+    deg=0
+  }
   
-   
-  deg=0
+
+  if (deg == 360) deg = 0
+ 
   carBox.style.rotate = deg + 'deg'
 }
 
