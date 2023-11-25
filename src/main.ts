@@ -317,6 +317,7 @@ function rotateLeft () {
 //   }
 // }
 
+
 function rotateUp () {
   deg+=90
   if (deg >=0|| deg<=90) {
