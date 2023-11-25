@@ -130,7 +130,8 @@ switchLamps2.addEventListener('click', ()=> {
 
  
   
-
+const click = new Audio
+click.src = 'mouseClick.mp3'
 
 
 //! Управление машинкой
@@ -148,6 +149,7 @@ switchLamps2.addEventListener('click', ()=> {
     car.classList.remove('car3')
     car.classList.remove('car4')
     rotateRight()
+   
 
   } if (event.key == 'ArrowLeft'|| event.code == 'KeyA'){
     moveX = moveX - 15
@@ -211,6 +213,7 @@ bt_1.addEventListener ('click',()=> {
   car.classList.remove('car3')
   car.classList.remove('car4')
   rotateLeft()
+  click.play()
 }) 
 
 bt_2.addEventListener ('click',()=> {
@@ -224,6 +227,7 @@ bt_2.addEventListener ('click',()=> {
     car.classList.remove('car3')
     car.classList.remove('car4')
   rotateRight () 
+  click.play()
 }) 
 
 bt_3.addEventListener ('click',()=> {
@@ -237,6 +241,7 @@ bt_3.addEventListener ('click',()=> {
   car.classList.remove('car2')
   car.classList.remove('car4')
   rotateUp ()
+  click.play()
 }) 
 
 bt_4.addEventListener ('click',()=> {
@@ -250,6 +255,7 @@ bt_4.addEventListener ('click',()=> {
   car.classList.remove('car2')
   car.classList.remove('car3')
   rotateDown()
+  click.play()
 }) 
 
 
