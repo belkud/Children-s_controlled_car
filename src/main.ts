@@ -73,6 +73,12 @@ const signal = document.querySelector('#signal') as HTMLButtonElement
 
 
 
+
+
+
+
+
+
 //! Посигналить
 const carSignal = new Audio()
 carSignal.src =  'Autosignal.mp3'
@@ -80,6 +86,15 @@ signal.addEventListener ('click', ()=> {
   carSignal.play()
 } )
 
+document.addEventListener('keypress',(event)=> {
+  if (event.code== 'KeyB') {
+    carSignal.play()
+    
+  }
+  console.log(event.key);
+  console.log(event.code);
+  
+})
 
 
 //! Включить фары
@@ -129,7 +144,7 @@ click.src = 'mouseClick.mp3'
 //! Управление машинкой
 
   document.addEventListener ( 'keydown' , (event)=> {
-  console.log(event.code);
+ 
   if (event.key == 'ArrowRight' || event.code == 'KeyD' ) {
     moveX = moveX + 15
     moveY = moveY + 0
@@ -141,7 +156,14 @@ click.src = 'mouseClick.mp3'
     car.classList.remove('car3')
     car.classList.remove('car4')
     rotateRight()
-   
+
+    if (event.shiftKey ) {
+      // moveX = moveX + 30
+      // moveY = moveY + 0
+      // car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
+        console.log (123)
+    }
+console.log(event.shiftKey );
 
   } if (event.key == 'ArrowLeft'|| event.code == 'KeyA'){
     moveX = moveX - 15
