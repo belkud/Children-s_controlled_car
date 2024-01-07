@@ -24,7 +24,7 @@ body {
 #theme {
    min-height: 150px; 
    margin-left: 75%;
-   margin-top: -100px;
+   margin-top: -150px;
    width: 20%; 
    /* border: 2px solid red; */
    display: flex;
