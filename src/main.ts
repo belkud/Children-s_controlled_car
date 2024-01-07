@@ -192,19 +192,10 @@ click.src = 'mouseClick.mp3'
     car.classList.remove('car2')
     car.classList.remove('car3')
     rotateDown ()
-  }  if (event.code == 'Space' && event.key == 'ArrowDown' ) {
-    // moveX = moveX + 30
-    // moveY = moveY + 0
-    // car_container.style.transform =  `translate(${moveX}px,${moveY}px)`
-    console.log (123)
-  }
+  } 
+  
 })
-// document.addEventListener('keypress',(event)=> {
-//   if (event.code== 'KeyB') {
-//     carSignal.play()
-    
-//   }
-// console.log(carBox);
+
 
  
 //! Управление со смартфона
