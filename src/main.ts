@@ -4,15 +4,6 @@ import './style.css'
 
 
 
-//  if (confirm ('покрасить background?')) {
-
-
-//   // location.href= 'https://dzen.ru/?clid=2233626&yredirect=true'
-//  }
-
-// console.log(location);
-
-
 
 const sun = document.querySelector ('#sun') as HTMLDivElement
 const moon = document.querySelector ('#moon') as HTMLDivElement
@@ -27,21 +18,8 @@ let moveY = 0
 
 //! Изменение дневной\ночной темы
 theme.addEventListener ('click', ()=>{
-  if (document.body.style.background == 'lightgrey') {
-    document.body.style.background = 'black'
-    document.body.style.transition = .5 +'s'
-    theme.style.color = 'aliceblue'
-    carWithLamp.style.opacity = '1'
-    carWithLamp3.style.opacity = '.6'
-    car.style.opacity = '1'
-    car.style.filter = 'none'
-    sun.style.transform = `translate(0px, 120px)`
-    sun.style.transition = .5 + 's'
-    cloud.style.filter = `brightness(.6)`
-    moon.style.transform = `translate(0px, 60px)`
-    moon.style.transition = .5 + 's'
-    moon.style.display = 'block'
-  } else {
+  if (document.body.style.background == 'black') {
+
     document.body.style.background = 'lightgrey'
     document.body.style.transition = .5 +'s'
     theme.style.color = 'black'
@@ -55,6 +33,20 @@ theme.addEventListener ('click', ()=>{
     cloud.style.filter = `brightness(1)`
     moon.style.transform = `translate(0px, 120px)`
     moon.style.transition = .5 + 's'
+  } else {
+    document.body.style.background = 'black'
+    document.body.style.transition = .5 +'s'
+    theme.style.color = 'aliceblue'
+    carWithLamp.style.opacity = '1'
+    carWithLamp3.style.opacity = '.6'
+    car.style.opacity = '1'
+    car.style.filter = 'none'
+    sun.style.transform = `translate(0px, 120px)`
+    sun.style.transition = .5 + 's'
+    cloud.style.filter = `brightness(.6)`
+    moon.style.transform = `translate(0px, 60px)`
+    moon.style.transition = .5 + 's'
+    moon.style.display = 'block'
   }  
 })
  
@@ -197,7 +189,7 @@ const bt_1 =document.querySelector('#bt_1') as HTMLButtonElement
 const bt_2 =document.querySelector('#bt_2') as HTMLButtonElement
 const bt_3 =document.querySelector('#bt_3') as HTMLButtonElement
 const bt_4 =document.querySelector('#bt_4') as HTMLButtonElement
-const svgfile =document.querySelector('#svgfile') as HTMLOrSVGImageElement
+
 
 
 
@@ -338,27 +330,6 @@ function rotateUp () {
 
 
 
-const list_item = document.querySelectorAll('.list-item>button') 
-let seconds = 0
-  for (let i=0; i<list_item.length; i++)(
-  list_item[i].addEventListener ('click', ()=> {
-     
- setInterval(() => {
-   seconds++
-   list_item[4].innerHTML = `${seconds}` 
- }, 1000);
- 
- 
-    console.log(`${i+1}`);
-    
-}))
-
-list_item.forEach(list_item=>
-  list_item.addEventListener ('click', (event)=> {
-    list_item.classList.toggle('changeColor')
-    console.log(event.target.dataset.set);
-    
-}))
 
 
 
@@ -422,30 +393,7 @@ const button = document.querySelector('#button') as HTMLButtonElement
   Vasia.age =29
   console.log(Vasia);
   
-  //  delete Vasia.age
-  // console.log(Vasia);
-
  
-  let summ = 1
- 
-  const users = document.querySelector('#users') as HTMLButtonElement
-  // users.innerHTML = (Vasia.name + '<br>')
-  // users.innerHTML += Vasia.age
-  
-  users.addEventListener('click', ()=> {
-    setInterval(()=>{
-      summ++
-      users.innerHTML = `Счетчик времени: ${summ}`
-    },1)
-  })
-
-
-  // const nums = document.querySelector('#num') as HTMLButtonElement
- 
-
-
-
-
   //! Метод document.write – один из наиболее древних  и ненужных методов (работает пока страничка грузится)
 
 
@@ -530,14 +478,7 @@ let user1 = new Person('Sveta', 27, 'Sochi')
 console.log(user1);
 
 
-
-
-
-
-const data_output = document.querySelector('#data_output ') as HTMLDivElement
-
-
-
+ 
 
 //! promise
 const prom1 = new Promise((resolve,reject)=>{
@@ -556,16 +497,4 @@ prom2.catch((value)=>{
   console.log(value)
 })
 
-data_output.addEventListener ('click', ()=>{
-    if (data_output.style.backgroundColor == 'red'){
-      data_output.style.backgroundColor = 'green'
-      prom1.then((value)=>{
-       data_output.innerHTML = (value)
-     })
-    } else {
-      data_output.style.backgroundColor = 'red'
-      prom2.catch((value)=>{
-       data_output.innerHTML = (value)
-     })
-    }
-})
+ 
