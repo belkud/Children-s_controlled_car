@@ -1,3 +1,3 @@
 export default {
-    base: '/Education/'
+    base: '/controlled_machine/'
 }
