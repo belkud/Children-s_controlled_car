@@ -1,3 +1,3 @@
 export default {
-    base: '/Education/'
+    base: '/Children's_controlled_car/'
 }
