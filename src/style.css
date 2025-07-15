@@ -1,6 +1,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 body {
@@ -34,6 +35,7 @@ body {
    font-size: 0.9em;
    text-shadow: 0px 0px 8px white;
    padding: 20px;
+   cursor: pointer;
   }
   
   
@@ -100,16 +102,16 @@ cursor:pointer;
  
 
 .car1 {
-  filter: drop-shadow(20px -20px 1px rgb(108, 107, 107, .6));
-}
-.car2 {
-  filter: drop-shadow(-20px 20px 1px rgb(108, 107, 107, .6));
-}
-.car3 {
   filter: drop-shadow(20px 20px 1px rgb(108, 107, 107, .6));
 }
-.car4 {
+.car2 {
   filter: drop-shadow(-20px -20px 1px rgb(108, 107, 107, .6));
+}
+.car3 {
+  filter: drop-shadow(-20px 20px 1px rgb(108, 107, 107, .6));
+}
+.car4 {
+  filter: drop-shadow(20px -20px 1px rgb(108, 107, 107, .6));
 }
 
  

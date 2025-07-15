@@ -309,26 +309,31 @@ function rotateDown () {
 }
 
 function rotateUp () {
-  if (deg<=180) {
-    deg=0 
-    console.log(90);
-  }
+  // deg=360 
+  // if (deg<=180) {
+  //   console.log(90);
+  // }
   
   
+  if (deg <= 180) {
+    deg=0
+    console.log(270);
+    
+  } 
   if (deg == 270) {
     deg=360
     console.log(270);
     
   } 
-  // setTimeout(() => {
-  //   deg=0 
-    
-  // }, 20);
   
   carBox.style.rotate = deg + 'deg'
 }
 
- 
+
+setTimeout(() => {
+  deg==0 
+  
+}, 20);
 
 
 
